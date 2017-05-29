@@ -1,0 +1,4 @@
+#div_notes_content{ text-align:left; }
+.notes_title_left { width:70%;height:30px;float:left;background:#c1e1dd;padding:5px;color:#00544a;font-family: Î¢ÈíÑÅºÚ, Tahoma, Arial;border-bottom:1px solid gray;}
+.notes_title_right{ width:30%;height:30px;background:#c1e1dd;padding:5px;color:#00544a;font-family: Î¢ÈíÑÅºÚ, Tahoma, Arial;border-bottom:1px solid gray; text-align:right; float:left;}
+.notes_content{ clear:both;margin:10px; }

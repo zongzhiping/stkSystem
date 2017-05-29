@@ -1,0 +1,285 @@
+/*定义工具栏(增删改等，根据不同宽度设置不同背景图片)*/
+
+#navMenubar #import {
+    width: 45px;
+    height: 21px;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/iconbg.jpg") no-repeat left 1px;
+}
+
+#navMenubar #doimport {
+    width: 45px;
+    height: 21px;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/iconbg.jpg") no-repeat left 1px;
+}
+
+#navMenubar #update {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/update.gif") no-repeat;
+}
+
+#navMenubar #edit {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/update.gif") no-repeat;
+}
+
+#navMenubar #new {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/new.gif") no-repeat;
+}
+
+#navMenubar #back {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/back.gif") no-repeat;
+}
+
+#navMenubar #stop {
+    width: 45px;
+    height: 21px;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/iconbg.jpg") no-repeat left 1px;
+}
+
+#navMenubar #save {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/save.gif") no-repeat;
+}
+
+#navMenubar #submit {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/save.gif") no-repeat;
+}
+
+#navMenubar #view {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/view.gif") no-repeat;
+}
+
+#navMenubar #accept {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/accept.gif") no-repeat;
+}
+
+#navMenubar #reject {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/reject.gif") no-repeat;
+}
+
+#navMenubar #query {
+    width: 45px;
+    height: 21px;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/iconbg.jpg") no-repeat left 1px;
+}
+
+#navMenubar #search {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/search.gif") no-repeat;
+}
+
+#navMenubar #enable {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/accept.gif") no-repeat;
+}
+
+#navMenubar #disable {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/disable.gif") no-repeat;
+}
+
+#navMenubar #clear {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/clear.gif") no-repeat;
+}
+
+#navMenubar #startup {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/startup.gif") no-repeat;
+}
+
+#navMenubar #publish {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/startup.gif") no-repeat;
+}
+
+#navMenubar #report {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/report.gif") no-repeat;
+}
+
+#navMenubar #assess {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/assess.gif") no-repeat;
+}
+
+#navMenubar #print {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/print.gif") no-repeat;
+}
+
+#navMenubar #stat {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/stat.gif") no-repeat;
+}
+
+#navMenubar #people {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/people.png") no-repeat;
+}
+
+#navMenubar #print_view {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 28px;
+    padding-top: 5px;
+    background: url("../images/button/print_view.gif") no-repeat;
+}
+
+#navMenubar #work_assign {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 18px;
+    padding-top: 5px;
+    background: url("../images/button/work_assign.gif") no-repeat;
+}
+
+#navMenubar #save_assign {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 18px;
+    padding-top: 5px;
+    background: url("../images/button/work_assign.gif") no-repeat;
+}
+
+#navMenubar #confirm_back {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 18px;
+    padding-top: 5px;
+    background: url("../images/button/confirm_back.gif") no-repeat;
+}
+
+#navMenubar #deploy {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 18px;
+    padding-top: 5px;
+    background: url("../images/button/deploy.gif") no-repeat;
+}
+
+#navMenubar #dosearch {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 18px;
+    padding-top: 5px;
+    background: url("../images/button/dosearch.gif") no-repeat;
+}
+
+#navMenubar #save_edit {
+    width: 95px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 18px;
+    padding-top: 5px;
+    background: url("../images/button/save_edit.gif") no-repeat;
+}
+
+#navMenubar #delete {
+    width: 70px;
+    height: 25px;
+    color: #00554a;
+    padding-left: 16px;
+    padding-top: 5px;
+    background: url("../images/button/del.gif") no-repeat;
+}

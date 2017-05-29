@@ -1,0 +1,62 @@
+/* call of the index.jsp */
+
+body{padding:0;margin:0;background:url(../../images/index_bg.gif);font-family:Arial;font-size:14px;color:#fff;overflow:hidden;height:100%;}
+input{width:160px;border:1px solid #666666;height:18px;padding:2px 0 0 2px;margin-left:15px;background:url(../../images/index_input_bg.gif) repeat-x;}
+.blank{width:100%;height:100px;}
+.main{width:100%;height:100%;text-align:center;}
+	.main_bg{position:relative;width:658px;height:391px;background:url(../../images/index_main_bg.gif) no-repeat;}
+		.top_logo{width:602px;height:72px;position:absolute;left:25px;top:30px;}
+		.login_main{width:602px;height:150px;position:absolute;left:25px;top:160px;border:0px solid #cbcbcb;}
+			.login_name{width:250px;position:absolute;top:5px;left:175px;}
+			.login_pwd{width:250px;;position:absolute;top:40px;left:175px;letter-spacing:3.8px;}
+			
+	.login_icon{width:90px;height:40px;position:absolute;left:175px;top:100px;}
+	#submitButton{width:90px;height:40px;background:url(../../images/login.gif) no-repeat;border:none;cursor:pointer;}
+	.clear_login_icon{width:90px;height:40px;position:absolute;left:305px;top:100px;}
+	#resetButton{width:90px;height:40px;background:url(../../images/clear_login.gif) no-repeat;border:none;cursor:pointer;}
+	.video_help{width:74px;height:33px;position:absolute;left:10px;top:175px;}
+	.download{width:400px;height:20px;position:absolute;color:#dfdfdf;left:108px;top:180px;font-size:12px;}
+		.download a, .download a:link,{color:#d5d5d5;text-decoration:none;}
+		.download a:hover{color:#dfdfdf;text-decoration:underline;}
+	.copyright{width:400px;height:20px;position:absolute;color:#dfdfdf;left:108px;top:200px;font-size:12px;}
+	.version{width:160px;position:absolute;color:#d5d5d5;right:-18px;top:-60px;font-size:11px;font-family:Arial;}
+	.help_version{widht:282px;height:132px;position:absolute;right:-18px;top:-40px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=95);display:none;}
+	.hversion{width:15px;height:15px;border:1px solid #ff0000;position:absolute;}
+	.fav_icon{width:40px;height:27px;position:absolute;left:560px;top:180px;}
+	.mirro{width:658px;height:44px;position:absolute;left:-21px;top:223px;background:url(../../images/mirro.gif) no-repeat;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+	.erro{width:185px;height:80px;position:absolute;left:420px;top:-30px;padding:10px 0;text-align:left;background:URL(images/login_erro_bg.gif) no-repeat;}
+	.erro_intro{margin-left:50px;padding-top:5px;padding-right:10px;font-size:12px;color:#990000;}
+
+	.PositionFrame_black{
+	display:none;
+	position:absolute;
+	left:0;
+	top:0;
+	width:expression(document.body.clientWidth);
+	height:expression(document.body.clientHeight);
+	background:#042622;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+	z-index:1;
+	overflow:hidden;
+	}
+	.color_egg{
+	display:none;
+	width:expression(document.body.clientWidth);
+	height:expression(document.body.clientHeight/1.5);
+	position:absolute;
+	top:160px;
+	z-index:99;
+	text-align:center;
+	}
+	.CloseEgg{
+	display:none;
+	position:absolute;
+	top:5px;
+	right:5px;
+	z-index:3;
+	}
+	.down_load{
+	position:absolute;
+	top:0;
+	right:0px;
+	}

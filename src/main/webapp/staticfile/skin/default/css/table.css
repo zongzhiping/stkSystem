@@ -1,0 +1,27 @@
+.tableDiv {
+    text-align: center;
+}
+
+.commonTable {
+    width: 97%;
+}
+
+.columnTitle {
+    PADDING-LEFT: 10pt;
+    BACKGROUND: #f0fcfa;
+    FONT: bold 9pt 微软雅黑, 宋体;
+    COLOR: #369e92;
+    HEIGHT: 20pt;
+    TEXT-ALIGN: left;
+}
+
+.tableContent {
+    background: #fff;
+    border-bottom: 1px solid #e1f1ef;
+    line-height: 22px;
+}
+
+.tableFooter {
+    BACKGROUND: #c1e1dd;
+}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.model.Ddxt" table="ddxt">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+          <property name="title" type="java.lang.String">
+            <column name="title" length="50" />
+        </property>
+        <property name="a" type="java.lang.String">
+            <column name="a" length="50" />
+        </property>
+         <property name="b" type="java.lang.String">
+            <column name="b" length="50" />
+        </property>
+         <property name="c" type="java.lang.String">
+            <column name="c" length="50" />
+        </property>
+         <property name="d" type="java.lang.String">
+            <column name="d" length="50" />
+        </property>
+        
+        <property name="da" type="java.lang.String">
+            <column name="da" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

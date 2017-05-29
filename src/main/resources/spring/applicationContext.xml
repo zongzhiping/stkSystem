@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+		  value="jdbc:mysql://127.0.0.1:3306/stkweb?useUnicode=true&amp;characterEncoding=UTF-8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>Demo.hbm.xml</value>
+				<value>Admin.hbm.xml</value>
+				<value>Teacher.hbm.xml</value>
+				<value>Stu.hbm.xml</value>
+				<value>Dxt.hbm.xml</value>
+				<value>Ddxt.hbm.xml</value>
+				<value>Pd.hbm.xml</value>
+				<value>Bc.hbm.xml</value>
+				<value>Kst.hbm.xml</value>
+				<value>Ks.hbm.xml</value>
+				<value>Tm.hbm.xml</value>
+				<value>StuKs.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--转向登陆页面-->
+	<bean id="toLoginAction" class="com.action.ToLoginAction" scope="prototype">
+
+	</bean>
+
+	<!-- 登入开始 -->
+	<bean id="loginAction" class="com.action.LoginAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="loginDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="loginDAO" class="com.dao.LoginDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 登入结束 -->
+	
+	<!-- 单选题开始 -->
+	<bean id="dxtAction" class="com.action.DxtAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="dxtDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="dxtDAO" class="com.dao.DxtDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 单选题结束 -->
+	
+	<!-- 多选题开始 -->
+	<bean id="ddxtAction" class="com.action.DdxtAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="ddxtDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="ddxtDAO" class="com.dao.DdxtDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 多选题结束 -->
+	
+	<!-- 判断题开始 -->
+	<bean id="pdAction" class="com.action.PdAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="pdDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="pdDAO" class="com.dao.PdDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 判断题结束 -->
+	
+	<!-- 编程题开始 -->
+	<bean id="bcAction" class="com.action.BcAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="bcDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="bcDAO" class="com.dao.BcDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 编程题结束 -->
+	
+	<!-- 学生开始 -->
+	<bean id="stuAction" class="com.action.StuAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="stuDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="stuDAO" class="com.dao.StuDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 学生结束 -->
+	
+	<!-- 考试题开始 -->
+	<bean id="kstAction" class="com.action.KstAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="kstDAO" />
+		 </property>
+		 <property name="ksdao">
+			<ref bean="ksDAO" />
+		 </property>
+		  <property name="dxtdao">
+			<ref bean="dxtDAO" />
+		 </property>
+		 <property name="ddxtdao">
+			<ref bean="ddxtDAO" />
+		 </property>
+		 <property name="pddao">
+			<ref bean="pdDAO" />
+		 </property>
+		 <property name="bcdao">
+			<ref bean="bcDAO" />
+		 </property>
+		  <property name="studao">
+			<ref bean="stuDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="kstDAO" class="com.dao.KstDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 考试题结束 -->
+	
+	<!-- 考试开始 -->
+	<bean id="ksAction" class="com.action.KsAction" scope="prototype">
+		 <property name="dao">
+			<ref bean="ksDAO" />
+		 </property>
+		 
+		 <property name="kstdao">
+			<ref bean="kstDAO" />
+		 </property>
+		  <property name="dxtdao">
+			<ref bean="dxtDAO" />
+		 </property>
+		 <property name="ddxtdao">
+			<ref bean="ddxtDAO" />
+		 </property>
+		 <property name="pddao">
+			<ref bean="pdDAO" />
+		 </property>
+		 <property name="bcdao">
+			<ref bean="bcDAO" />
+		 </property>
+	</bean>
+	
+	<bean id="ksDAO" class="com.dao.KsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 考试结束 -->
+	
+	
+	</beans>

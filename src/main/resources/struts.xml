@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="liu" extends="struts-default">
+        <global-results>
+            <result name="succeed">/common/succeed.jsp</result>
+            <result name="successAdd">/common/add_success.jsp</result>
+            <result name="successDel">/common/del_success.jsp</result>
+            <result name="successUpdate">/common/update_success.jsp</result>
+        </global-results>
+
+        <!--转向登陆页面-->
+        <action name="toLogin" class="toLoginAction" method="toLogin">
+            <result name="yes">/WEB-INF/pages/sysadmin/login/login.jsp</result>
+        </action>
+
+        <!-- 管理员登入 -->
+        <action name="adminLogin" class="loginAction" method="adminLogin">
+             <!--<result name="yes">/WEB-INF/pages/home/fmain.jsp</result>-->
+            <result name="yes">/loginSuccess.jsp</result>
+            <result name="no">/WEB-INF/pages/sysadmin/login/login.jsp</result>
+        </action>
+        <!-- 教师登入 -->
+         <action name="teacherLogin" class="loginAction" method="teacherLogin">
+             <result name="yes">/loginSuccess.jsp</result>
+             <result name="no">/login.jsp</result>
+        </action>
+        <!-- 学生登入 -->
+         <action name="stuLogin" class="loginAction" method="stuLogin">
+             <result name="yes">/loginSuccess.jsp</result>
+             <result name="no">/login.jsp</result>
+        </action>
+         <!-- 单选题添加 -->
+        <action name="dxtAdd" class="dxtAction" method="add">
+        </action>
+         <!-- 单选题列表 -->
+        <action name="dxtList" class="dxtAction" method="all">
+          <result name="list">/admin/dxtList.jsp</result>
+        </action>
+        
+         <!-- 随机单选题列表 -->
+        <action name="szddxtList" class="dxtAction" method="szddxtList">
+          <result name="list">/admin/szddxtList.jsp</result>
+        </action>
+        
+         <!-- 单选题删除 -->
+        <action name="dxtDel" class="dxtAction" method="delete">
+        </action>
+        
+         <!-- 单选题修改前 -->
+        <action name="dxtMb" class="dxtAction" method="modifybefore">
+          <result name="mb">/admin/dxtModify.jsp</result>
+        </action>
+        
+        <!-- 单选题修改 -->
+        <action name="dxtModify" class="dxtAction" method="modify">
+        </action>
+        
+         <!-- 多选题添加 -->
+        <action name="ddxtAdd" class="ddxtAction" method="add">
+        </action>
+         <!-- 多选题列表 -->
+        <action name="ddxtList" class="ddxtAction" method="all">
+          <result name="list">/admin/ddxtList.jsp</result>
+        </action>
+         <!-- 随机多选题列表 -->
+        <action name="szdddxtList" class="ddxtAction" method="szdddxtList">
+          <result name="list">/admin/szdddxtList.jsp</result>
+        </action>
+         <!-- 多选题删除 -->
+        <action name="ddxtDel" class="ddxtAction" method="delete">
+        </action>
+        
+         <!-- 多选题修改前 -->
+        <action name="ddxtMb" class="ddxtAction" method="modifybefore">
+          <result name="mb">/admin/ddxtModify.jsp</result>
+        </action>
+        
+        <!-- 多选题修改 -->
+        <action name="ddxtModify" class="ddxtAction" method="modify">
+        </action>
+        
+        
+           <!-- 判断题添加 -->
+        <action name="pdAdd" class="pdAction" method="add">
+        </action>
+         <!-- 判断题列表 -->
+        <action name="pdList" class="pdAction" method="all">
+          <result name="list">/admin/pdList.jsp</result>
+        </action>
+         <!-- 随机判断题列表 -->
+        <action name="szdpdList" class="pdAction" method="szdpdList">
+          <result name="list">/admin/szdpdList.jsp</result>
+        </action>
+         <!-- 判断题删除 -->
+        <action name="pdDel" class="pdAction" method="delete">
+        </action>
+        
+         <!-- 判断题修改前 -->
+        <action name="pdMb" class="pdAction" method="modifybefore">
+          <result name="mb">/admin/pdModify.jsp</result>
+        </action>
+        
+        <!-- 判断题修改 -->
+        <action name="pdModify" class="pdAction" method="modify">
+        </action>
+        
+        
+        
+           <!-- 编程题添加 -->
+        <action name="bcAdd" class="bcAction" method="add">
+        </action>
+         <!-- 编程题列表 -->
+        <action name="bcList" class="bcAction" method="all">
+          <result name="list">/admin/bcList.jsp</result>
+        </action>
+         <!-- 随机编程题列表 -->
+        <action name="szdbcList" class="bcAction" method="szdbcList">
+          <result name="list">/admin/szdbcList.jsp</result>
+        </action>
+         <!-- 编程题删除 -->
+        <action name="bcDel" class="bcAction" method="delete">
+        </action>
+        
+         <!-- 编程题修改前 -->
+        <action name="bcMb" class="bcAction" method="modifybefore">
+          <result name="mb">/admin/bcModify.jsp</result>
+        </action>
+        
+        <!-- 编程题修改 -->
+        <action name="bcModify" class="bcAction" method="modify">
+        </action>
+        
+        
+        
+         <!-- 用户添加 -->
+        <action name="stuAdd" class="stuAction" method="add">
+        </action>
+         <!--学生列表 -->
+        <action name="stuList" class="stuAction" method="all">
+          <result name="list">/admin/stuList.jsp</result>
+        </action>
+        
+        <!--我的信息 -->
+        <action name="myself" class="stuAction" method="myself">
+          <result name="list">/admin/myself.jsp</result>
+        </action>
+        <action name="myselfmodify" class="stuAction" method="myselfmodify">
+        </action>
+        
+          <!-- 学生删除 -->
+        <action name="stuDel" class="stuAction" method="delete">
+        </action>
+        
+          <!-- 考试题添加 -->
+        <action name="kstAdd" class="kstAction" method="add">
+        </action>
+        
+        <!-- 考试题列表 -->
+        <action name="kstList" class="kstAction" method="all">
+          <result name="list">/admin/kst.jsp</result>
+        </action>
+        
+           <!-- 考试添加 -->
+        <action name="ksAdd" class="ksAction" method="add">
+        </action>
+        
+           <!-- 考试添加 -->
+        <action name="ksAdd2" class="ksAction" method="add2">
+        </action>
+        
+         <!-- 考试列表 -->
+        <action name="ksList" class="ksAction" method="all">
+          <result name="list">/admin/ksList.jsp</result>
+          <result name="stulist">/admin/stuksList.jsp</result>
+          <result name="zdyjlist">/admin/zdyjList.jsp</result>
+           <result name="bzdyjlist">/admin/bzdyjList.jsp</result>
+           <result name="cjcxlist">/admin/cjcxList.jsp</result>
+           
+        </action>
+        
+          <!-- 考试删除 -->
+        <action name="ksDel" class="ksAction" method="delete">
+        </action>
+        
+         <!-- 考试修改前 -->
+        <action name="ksMb" class="ksAction" method="modifybefore">
+          <result name="mb">/admin/ksModify.jsp</result>
+        </action>
+        
+        <!-- 考试修改 -->
+        <action name="ksModify" class="ksAction" method="modify">
+        </action>
+        
+         <!-- 学生考试前 -->
+        <action name="stuksb" class="kstAction" method="stuksb">
+        	<result name="success">/admin/sjks.jsp</result>
+        </action>
+        
+         <!-- 交卷############################################# -->
+        <action name="jj" class="kstAction" method="jj">
+        	<result name="success">/admin/ksjg.jsp</result>
+        </action>
+        
+        <!-- 交卷 -->
+        <action name="zdyj" class="kstAction" method="zdyj">
+        </action>
+        <!-- 确定分数-->
+        <action name="qdfs" class="kstAction" method="qdfs">
+        </action>
+          <!--半自动阅卷列表 -->
+        <action name="bzdyjList" class="kstAction" method="bzdyjList">
+        	<result name="success">/admin/bzdyjStuList.jsp</result>
+        </action>
+        
+          <!--半自动阅一个 -->
+        <action name="bzdyjOne" class="kstAction" method="bzdyjOne">
+        	<result name="success">/admin/bzdyjOne.jsp</result>
+        </action>
+          <!--阅卷结束 -->
+        <action name="bzdyjok" class="kstAction" method="bzdyjok">
+        </action>
+        
+          <!--考试题制定结束 -->
+        <action name="wcks" class="kstAction" method="wcks">
+        </action>
+        
+        <!--考试题制定结束 -->
+        <action name="wcks2" class="kstAction" method="wcks2">
+        <result name="success">/admin/wcks.jsp</result>
+        </action>
+         <!--成绩查询 -->
+         <action name="cjcxList" class="kstAction" method="cjcxList">
+        	<result name="success">/admin/cjcxStuList.jsp</result>
+        </action>
+        
+        <!--我的成绩查询 -->
+         <action name="mycjlist" class="kstAction" method="mycjlist">
+        	<result name="success">/admin/mycjlist.jsp</result>
+        </action>
+        
+         <!-- 教师添加 -->
+        <action name="teaAdd" class="loginAction" method="add">
+        </action>
+         <!-- 教师列表 -->
+        <action name="teaList" class="loginAction" method="all">
+          <result name="list">/admin/teaList.jsp</result>
+        </action>
+        <!-- 教师删除 -->
+         <action name="teaDel" class="loginAction" method="delete">
+        </action>
+    </package>
+</struts>

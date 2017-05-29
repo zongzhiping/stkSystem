@@ -1,0 +1,7 @@
+.userbar{height:50px;width:165px;clear:both;display:block;margin:20px auto;}
+.userbar a{float:left;margin-right:10px;text-align:center;height:50px;width:45px;padding:30px 0 0;background:url(../../images/useraction.gif) no-repeat 0 0;}
+#emailfriend{background-position:0 -50px;}
+#ratelink{background-position:0 -100px;}
+#userbartxt{float:left;margin-right:10px;text-align:center;height:20px;width:45px;}
+#div_agreenum{float:left;margin-right:10px;text-align:center;height:20px;width:45px;}
+#div_denialnum{float:left;margin-right:10px;text-align:center;height:20px;width:45px;}
