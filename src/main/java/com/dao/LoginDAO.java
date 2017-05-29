@@ -22,7 +22,15 @@ public class LoginDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
+
+	public void update(Teacher transientInstance){
+		try{
+			getHibernateTemplate().update(transientInstance);
+		}catch (RuntimeException re){
+			throw re;
+		}
+	}
+
 	public void delete(Teacher persistentInstance) {
 		log.debug("deleting TAdmin instance");
 		try {
@@ -57,10 +65,10 @@ public class LoginDAO  extends HibernateDaoSupport {
 		}
 	}
 	
-	public Demo merge(Demo detachedInstance) {
+	public Teacher merge(Teacher detachedInstance) {
 		log.debug("merging TAdmin instance");
 		try {
-			Demo result = (Demo) getHibernateTemplate().merge(
+			Teacher result = (Teacher) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;

@@ -3,7 +3,7 @@
 <%@page import="com.model.*" %>
 <%
     String path = request.getContextPath();
-    Dxt bean = (Dxt) request.getAttribute("bean");
+    Teacher bean = (Teacher) request.getAttribute("bean");
 
 %>
 
@@ -23,7 +23,7 @@
 </HEAD>
 <BODY>
 <FORM id=ThisForm name=ThisForm
-      action="<%=path %>/dxtModify.action"
+      action="<%=path %>/teaEdit.action"
       method=post>
     <input type="hidden" id="id" name="id" value="<%=bean.getId()%>">
     <SCRIPT type=text/javascript>
@@ -84,38 +84,17 @@
                                 <TBODY>
                                 <TR
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD align="center">题目</TD>
+                                    <TD align="center">姓名</TD>
                                     <TD>
-                                        <textarea rows="10" cols="30" id="title"
-                                                  name="title"><%=bean.getTitle() %></textarea>
+                                        <input type="text" id="username" name="username" value="<%=bean.getUserName() %>"/>
                                     </TD>
                                 </TR>
                                 <TR
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD align="center">A</TD>
+                                    <TD align="center">密码</TD>
                                     <TD>
 
-                                        <input type="text" id="a" name="a" value="<%=bean.getA() %>"/></TD>
-                                </TR>
-                                <TR
-                                        style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD align="center">B</TD>
-                                    <TD><input type="text" id="b" name="b" value="<%=bean.getB() %>"/></TD>
-                                </TR>
-                                <TR
-                                        style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD align="center">C</TD>
-                                    <TD><input type="text" id="c" name="c" value="<%=bean.getC() %>"/></TD>
-                                </TR>
-                                <TR
-                                        style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD align="center">D</TD>
-                                    <TD><input type="text" id="d" name="d" value="<%=bean.getD() %>"/></TD>
-                                </TR>
-                                <TR
-                                        style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD align="center">答案</TD>
-                                    <TD><input type="text" id="da" name="da" value="<%=bean.getDa() %>"/></TD>
+                                        <input type="text" id="password" name="password" value="<%=bean.getPassword() %>"/></TD>
                                 </TR>
 
                                 </TBODY>

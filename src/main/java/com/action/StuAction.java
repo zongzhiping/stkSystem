@@ -20,317 +20,316 @@ import com.util.Pagination;
 
 public class StuAction extends ActionSupport {
 
-	private int id;
-	private String password;
-	private String userNo;
-	private String realName;
-	private String cardno;
-	private String tel;
-	private String state;
-	private String[] selectFlag;
-	private String title;
-	private String a;
-	private String b;
-	private String c;
-	private String d;
-	private String da;
-	private String message;
-	private String path;
-	private StuDAO dao;
-	private int index = 1;
-	private File image; // 上传的文件
-	private String imageFileName; // 文件名称 p
-	private String imageContentType; // 文件类型
+    private int id;
+    private String password;
+    private String userNo;
+    private String realName;
+    private String cardno;
+    private String tel;
+    private String state;
+    private String[] selectFlag;
+    private String title;
+    private String a;
+    private String b;
+    private String c;
+    private String d;
+    private String da;
+    private String message;
+    private String path;
+    private StuDAO dao;
+    private int index = 1;
+    private File image; // 上传的文件
+    private String imageFileName; // 文件名称 p
+    private String imageContentType; // 文件类型
 
-	public String upload() {
-		String realpath = ServletActionContext.getServletContext().getRealPath(
-				"/uploadFile");
-		System.out.println("realpath: " + realpath);
-		if (image != null) {
-			File savefile = new File(new File(realpath), imageFileName);
-			if (!savefile.getParentFile().exists())
-				savefile.getParentFile().mkdirs();
-			try {
-				FileUtils.copyFile(image, savefile);
-				// 读取excel写数据
-				List list = ExcelUtil.getStuListByExcel(savefile);
-				ActionContext actionContext = ActionContext.getContext();
-				Map session = actionContext.getSession();
-				for (int i = 0; i < list.size(); i++) {
-					Stu bean = (Stu) list.get(i);
-					int teaid = Integer.parseInt(session.get("id").toString());
-					// bean.setTeaid(teaid);
-					dao.save(bean);
-				}
+    public String upload() {
+        String realpath = ServletActionContext.getServletContext().getRealPath(
+                "/uploadFile");
+        System.out.println("realpath: " + realpath);
+        if (image != null) {
+            File savefile = new File(new File(realpath), imageFileName);
+            if (!savefile.getParentFile().exists())
+                savefile.getParentFile().mkdirs();
+            try {
+                FileUtils.copyFile(image, savefile);
+                // 读取excel写数据
+                List list = ExcelUtil.getStuListByExcel(savefile);
+                ActionContext actionContext = ActionContext.getContext();
+                Map session = actionContext.getSession();
+                for (int i = 0; i < list.size(); i++) {
+                    Stu bean = (Stu) list.get(i);
+                    int teaid = Integer.parseInt(session.get("id").toString());
+                    // bean.setTeaid(teaid);
+                    dao.save(bean);
+                }
 
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		this.setMessage("添加成功");
-		this.setPath("admin/stuAdd.jsp");
-		return "succeed";
-	}
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        this.setMessage("添加成功");
+        this.setPath("admin/stuAdd.jsp");
+        return "succeed";
+    }
 
-	public String add() {
-		Stu demo = new Stu();
-		demo.setCardno(cardno);
-		demo.setPassword(password);
-		demo.setRealName(realName);
-		demo.setState(state);
-		demo.setTel(tel);
-		demo.setUserNo(userNo);
-		dao.save(demo);
-		this.setMessage("添加成功");
-		this.setPath("admin/stuAdd.jsp");
-		return "succeed";
-	}
+    public String add() {
+        Stu demo = new Stu();
+        demo.setCardno(cardno);
+        demo.setPassword(password);
+        demo.setRealName(realName);
+        demo.setState(state);
+        demo.setTel(tel);
+        demo.setUserNo(userNo);
+        dao.save(demo);
+        this.setMessage("添加成功");
+        this.setPath("admin/stuAdd.jsp");
+        return "succeed";
+    }
 
-	public String delete() {
-		Stu demo = dao.findById(id);
-		dao.delete(demo);
-		this.setMessage("操作成功");
-		this.setPath("stuList.action");
-		return "succeed";
-	}
+    public String delete() {
+        Stu demo = dao.findById(id);
+        dao.delete(demo);
+        this.setMessage("操作成功");
+        this.setPath("stuList.action");
+        return "succeed";
+    }
 
-	public String modifybefore() {
+    public String modifybefore() {
 
-		Stu demo = dao.findById(Integer.parseInt(selectFlag[0]));
-		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("bean", demo);
-		return "mb";
-	}
-	
-	public String myself() {
+        Stu demo = dao.findById(Integer.parseInt(selectFlag[0]));
+        HttpServletRequest request = ServletActionContext.getRequest();
+        request.setAttribute("bean", demo);
+        return "mb";
+    }
 
-		ActionContext actionContext = ActionContext.getContext();
-		Map session = actionContext.getSession();
-		String myid = session.get("id").toString(); 
-		Stu demo = dao.findById(Integer.parseInt(myid));
-		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("bean", demo);
-		return "list";
-	}
-	
-	
-	
-	public String myselfmodify() {
-		Stu demo = dao.findById(id);
-		demo.setCardno(cardno);
-		demo.setPassword(password);
-		demo.setRealName(realName);
-		demo.setTel(tel);
-		dao.merge(demo);
-		this.setMessage("修改成功");
-		this.setPath("myself.action");
-		return "succeed";
-	}
-	
+    public String myself() {
 
-	public String modify() {
-		Stu demo = dao.findById(id);
-		// demo.setTitle(title);
-		// demo.setA(a);
-		// demo.setB(b);
-		// demo.setC(c);
-		// demo.setD(d);
-		// demo.setDa(da);
-		dao.merge(demo);
-		this.setMessage("修改成功");
-		this.setPath("StuList.action");
-		return "succeed";
-	}
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        String myid = session.get("id").toString();
+        Stu demo = dao.findById(Integer.parseInt(myid));
+        HttpServletRequest request = ServletActionContext.getRequest();
+        request.setAttribute("bean", demo);
+        return "list";
+    }
 
-	public String all() {
 
-		List list = new ArrayList();
-		list = dao.findAll();
+    public String myselfmodify() {
+        Stu demo = dao.findById(id);
+        demo.setCardno(cardno);
+        demo.setPassword(password);
+        demo.setRealName(realName);
+        demo.setTel(tel);
+        dao.merge(demo);
+        this.setMessage("修改成功");
+        this.setPath("myself.action");
+        return "succeed";
+    }
 
-		int pageSize = 10;
-		int fromIndex = (index - 1) * pageSize;
-		int toIndex = Math.min(fromIndex + pageSize, list.size());
-		List adminListFenye = list.subList(fromIndex, toIndex);
 
-		Pagination p = new Pagination();// 创建 分页对象
-		p.setIndex(index);// 设置页数
-		p.setPageSize(pageSize);
-		p.setTotle(list.size());// 设置总共的条数
-		p.setData(adminListFenye);// 设置数据
-		p.setPath("stuList.action");// 跳转的路径
+    public String modify() {
+        Stu demo = dao.findById(id);
+        // demo.setTitle(title);
+        // demo.setA(a);
+        // demo.setB(b);
+        // demo.setC(c);
+        // demo.setD(d);
+        // demo.setDa(da);
+        dao.merge(demo);
+        this.setMessage("修改成功");
+        this.setPath("StuList.action");
+        return "succeed";
+    }
 
-		Map request = (Map) ServletActionContext.getContext().get("request");
-		request.put("page", p);
-		return "list";
+    public String all() {
 
-	}
+        List list = new ArrayList();
+        list = dao.findAll();
 
-	public String search() {
-		List list = dao.findByProperty("", "");
-		Map request = (Map) ServletActionContext.getContext().get("request");
-		request.put("list", list);
-		return ActionSupport.SUCCESS;
-	}
+        int pageSize = 10;
+        int fromIndex = (index - 1) * pageSize;
+        int toIndex = Math.min(fromIndex + pageSize, list.size());
+        List adminListFenye = list.subList(fromIndex, toIndex);
 
-	public StuDAO getDao() {
-		return dao;
-	}
+        Pagination p = new Pagination();// 创建 分页对象
+        p.setIndex(index);// 设置页数
+        p.setPageSize(pageSize);
+        p.setTotle(list.size());// 设置总共的条数
+        p.setData(adminListFenye);// 设置数据
+        p.setPath("stuList.action");// 跳转的路径
 
-	public void setDao(StuDAO dao) {
-		this.dao = dao;
-	}
+        Map request = (Map) ServletActionContext.getContext().get("request");
+        request.put("page", p);
+        return "list";
 
-	public int getId() {
-		return id;
-	}
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public String search() {
+        List list = dao.findByProperty("", "");
+        Map request = (Map) ServletActionContext.getContext().get("request");
+        request.put("list", list);
+        return ActionSupport.SUCCESS;
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public StuDAO getDao() {
+        return dao;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setDao(StuDAO dao) {
+        this.dao = dao;
+    }
 
-	public String getPath() {
-		return path;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-	public String getA() {
-		return a;
-	}
+    public String getPath() {
+        return path;
+    }
 
-	public void setA(String a) {
-		this.a = a;
-	}
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-	public String getB() {
-		return b;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setB(String b) {
-		this.b = b;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getC() {
-		return c;
-	}
+    public String getA() {
+        return a;
+    }
 
-	public void setC(String c) {
-		this.c = c;
-	}
+    public void setA(String a) {
+        this.a = a;
+    }
 
-	public String getD() {
-		return d;
-	}
+    public String getB() {
+        return b;
+    }
 
-	public void setD(String d) {
-		this.d = d;
-	}
+    public void setB(String b) {
+        this.b = b;
+    }
 
-	public String getDa() {
-		return da;
-	}
+    public String getC() {
+        return c;
+    }
 
-	public void setDa(String da) {
-		this.da = da;
-	}
+    public void setC(String c) {
+        this.c = c;
+    }
 
-	public String[] getSelectFlag() {
-		return selectFlag;
-	}
+    public String getD() {
+        return d;
+    }
 
-	public void setSelectFlag(String[] selectFlag) {
-		this.selectFlag = selectFlag;
-	}
+    public void setD(String d) {
+        this.d = d;
+    }
 
-	public File getImage() {
-		return image;
-	}
+    public String getDa() {
+        return da;
+    }
 
-	public void setImage(File image) {
-		this.image = image;
-	}
+    public void setDa(String da) {
+        this.da = da;
+    }
 
-	public String getImageFileName() {
-		return imageFileName;
-	}
+    public String[] getSelectFlag() {
+        return selectFlag;
+    }
 
-	public void setImageFileName(String imageFileName) {
-		this.imageFileName = imageFileName;
-	}
+    public void setSelectFlag(String[] selectFlag) {
+        this.selectFlag = selectFlag;
+    }
 
-	public String getImageContentType() {
-		return imageContentType;
-	}
+    public File getImage() {
+        return image;
+    }
 
-	public void setImageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
-	}
+    public void setImage(File image) {
+        this.image = image;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getImageFileName() {
+        return imageFileName;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setImageFileName(String imageFileName) {
+        this.imageFileName = imageFileName;
+    }
 
-	public String getUserNo() {
-		return userNo;
-	}
+    public String getImageContentType() {
+        return imageContentType;
+    }
 
-	public void setUserNo(String userNo) {
-		this.userNo = userNo;
-	}
+    public void setImageContentType(String imageContentType) {
+        this.imageContentType = imageContentType;
+    }
 
-	public String getRealName() {
-		return realName;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setRealName(String realName) {
-		this.realName = realName;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getCardno() {
-		return cardno;
-	}
+    public String getUserNo() {
+        return userNo;
+    }
 
-	public void setCardno(String cardno) {
-		this.cardno = cardno;
-	}
+    public void setUserNo(String userNo) {
+        this.userNo = userNo;
+    }
 
-	public String getTel() {
-		return tel;
-	}
+    public String getRealName() {
+        return realName;
+    }
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
 
-	public String getState() {
-		return state;
-	}
+    public String getCardno() {
+        return cardno;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setCardno(String cardno) {
+        this.cardno = cardno;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
 }

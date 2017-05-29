@@ -175,6 +175,25 @@ public class LoginAction extends ActionSupport {
 		return "succeed";
 	}
 
+	//编辑教师信息之前的显示页面
+	public String editBefore() {
+
+		Teacher demo = dao.findById(Integer.parseInt(selectFlag[0]));
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.setAttribute("bean", demo);
+		return "mb";
+	}
+
+	public String edit(){
+		Teacher demo = dao.findById(id);
+		demo.setUserName(username);
+		demo.setPassword(password);
+		dao.merge(demo);
+		this.setMessage("更新成功");
+		this.setPath("teaList.action");
+		return "succeed";
+	}
+
 	public String all() {
 		List list = dao.findAll();
 		HttpServletRequest request = ServletActionContext.getRequest();

@@ -35,6 +35,25 @@
              <result name="yes">/loginSuccess.jsp</result>
              <result name="no">/login.jsp</result>
         </action>
+
+        <!-- 教师列表 -->
+        <action name="teaList" class="loginAction" method="all">
+            <result name="list">/admin/teaList.jsp</result>
+        </action>
+        <!-- 教师添加 -->
+        <action name="teaAdd" class="loginAction" method="add">
+        </action>
+        <!-- 教师删除 -->
+        <action name="teaDel" class="loginAction" method="delete">
+        </action>
+        <!--教师修改之前-->
+        <action name="teaMb" class="loginAction" method="editBefore">
+            <result name="mb">/admin/teaModify.jsp</result>
+        </action>
+        <!--教师修改-->
+        <action name="teaEdit" class="loginAction" method="edit">
+        </action>
+
          <!-- 单选题添加 -->
         <action name="dxtAdd" class="dxtAction" method="add">
         </action>
@@ -243,16 +262,6 @@
          <action name="mycjlist" class="kstAction" method="mycjlist">
         	<result name="success">/admin/mycjlist.jsp</result>
         </action>
-        
-         <!-- 教师添加 -->
-        <action name="teaAdd" class="loginAction" method="add">
-        </action>
-         <!-- 教师列表 -->
-        <action name="teaList" class="loginAction" method="all">
-          <result name="list">/admin/teaList.jsp</result>
-        </action>
-        <!-- 教师删除 -->
-         <action name="teaDel" class="loginAction" method="delete">
-        </action>
+
     </package>
 </struts>
