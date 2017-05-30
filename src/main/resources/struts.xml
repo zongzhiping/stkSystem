@@ -164,6 +164,15 @@
         <action name="stuList" class="stuAction" method="all">
           <result name="list">/admin/stuList.jsp</result>
         </action>
+        <!--学生修改之前-->
+        <action name="stuMb" class="stuAction" method="modifybefore">
+            <result name="mb">/admin/stuModify.jsp</result>
+        </action>
+        <!--学生修改-->
+        <action name="stuEdit" class="stuAction" method="modify">
+        </action>
+
+
         
         <!--我的信息 -->
         <action name="myself" class="stuAction" method="myself">

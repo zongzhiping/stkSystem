@@ -184,6 +184,7 @@ public class LoginAction extends ActionSupport {
 		return "mb";
 	}
 
+	//编辑教师信息
 	public String edit(){
 		Teacher demo = dao.findById(id);
 		demo.setUserName(username);

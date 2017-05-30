@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+#fy_div{
+	text-align: center;
+}
+
+#fy_div input{
+	width:20px;
+	border:solid 1px #CCCCCC;
+}
+
+#fy_div a{
+	text-decoration: none;
+	border: solid 1px #CCCCCC;
+	padding: 5px;
+	margin: 3px;
+	color:#333
+}
+
+#fy_div a:hover{
+	color:white;
+	background-color: red;
+}

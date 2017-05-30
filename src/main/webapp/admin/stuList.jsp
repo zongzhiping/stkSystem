@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.util.*" %>
 <%@ page import="com.model.*" %>
 <%@ page import="java.util.*" %>
@@ -9,30 +10,29 @@
             + path + "/";
 
     Pagination p = (Pagination) request.getAttribute("page");
-    int totleNum = p.getTotle();
-    int totlePage = p.getTotlePage();
-    int currentPage = p.getIndex();
+    int totleNum = p.getTotle();//总数量
+    int totlePage = p.getTotlePage();//总页数
+    int currentPage = p.getIndex();//当前页
+    int prePage = currentPage == 1 ? 1 : currentPage - 1;//上一页
     List list = p.getData();
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
-<HEAD id=Head1><TITLE>模板</TITLE>
+<head id=Head1><TITLE>模板</TITLE>
     <META http-equiv=Content-Type content="text/html; charset=utf-8">
-    <LINK
-            href="<%=path %>/admin/YHChannelApply.files/Style.css" type=text/css rel=stylesheet>
-    <LINK
-            href="<%=path %>/admin/YHChannelApply.files/Manage.css" type=text/css rel=stylesheet>
+    <link href="<%=path %>/admin/YHChannelApply.files/Style.css" type=text/css rel=stylesheet>
+    <link href="<%=path %>/admin/YHChannelApply.files/Manage.css" type=text/css rel=stylesheet>
+    <link href="<%=path%>/css/page.css" type="text/css" rel="stylesheet">
     <SCRIPT language=javascript src="<%=path %>/admin/YHChannelApply.files/FrameDiv.js"></SCRIPT>
 
     <SCRIPT language=javascript src="<%=path %>/admin/YHChannelApply.files/Common.js"></SCRIPT>
 
 
     <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
-</HEAD>
-<BODY>
-<FORM id=form1 name=form1
-      method=post>
+</head>
+<body>
+<form id=form1 name=form1 method=post>
     <SCRIPT type=text/javascript>
 
 
@@ -56,70 +56,110 @@
             }
         }
 
-        window.onload = function() {
+        window.onload = function () {
             var len = document.getElementsByName("selectFlag").length;
-            for(var i = 0 ; i < len ; i++){
-                document.getElementsByName("selectFlag")[i].onclick=function () {
+            for (var i = 0; i < len; i++) {
+                document.getElementsByName("selectFlag")[i].onclick = function () {
                     var flag = true;
-                    for(var j = 0 ; j <len ;j++){
-                        if(!document.getElementsByName()[j].checked){
+                    for (var j = 0; j < len; j++) {
+                        if (!document.getElementsByName()[j].checked) {
                             flag = false;
                         }
                     }
-                    document.getElementById("boxListValue").checked=flag;
+                    document.getElementById("boxListValue").checked = flag;
                 }
             }
         }
 
-        function frist() {
-            with (document.getElementById("memberForm")) {
+        <%--function frist() {--%>
+            <%--with (document.getElementById("memberForm")) {--%>
+                <%--method = "post";--%>
+                <%--action = "<%=path %>/stuList.action?index=1";--%>
+                <%--submit();--%>
+            <%--}--%>
+        <%--}--%>
+
+
+        <%--function back() {--%>
+            <%--var pageNo = '<%=currentPage%>';--%>
+            <%--if (pageNo < 2) {--%>
+                <%--alert("当前已经是第一页");--%>
+                <%--return;--%>
+            <%--} else {--%>
+                <%--pageNo = Number(pageNo) - 1;--%>
+            <%--}--%>
+            <%--with (document.getElementById("memberForm")) {--%>
+                <%--method = "post";--%>
+                <%--action = "<%=path %>/stuList.action?index=" + pageNo;--%>
+                <%--submit();--%>
+            <%--}--%>
+        <%--}--%>
+
+        <%--function next() {--%>
+            <%--var pageNo = '<%=currentPage%>';--%>
+            <%--var totlePage = '<%=totlePage%>';--%>
+            <%--if (pageNo == totlePage) {--%>
+                <%--alert("当前已经是最后一页");--%>
+                <%--return;--%>
+            <%--} else {--%>
+                <%--pageNo = Number(pageNo) + 1;--%>
+            <%--}--%>
+            <%--with (document.getElementById("form1")) {--%>
+                <%--method = "post";--%>
+                <%--action = "<%=path %>/stuList.action?index=" + pageNo;--%>
+                <%--submit();--%>
+            <%--}--%>
+        <%--}--%>
+
+        <%--function last() {--%>
+            <%--var totlePage = '<%=totlePage%>';--%>
+            <%--with (document.getElementById("memberForm")) {--%>
+                <%--method = "post";--%>
+                <%--action = "<%=path %>/stuList.action?index=" + totlePage;--%>
+                <%--submit();--%>
+            <%--}--%>
+        <%--}--%>
+
+
+        //页面跳转js
+        function  changePageA(obj) {
+            with (document.getElementById("form1")){
                 method = "post";
-                action = "<%=path %>/stuList.action?index=1";
+                action = "<%=path%>/stuList.action?index="+obj;
                 submit();
             }
         }
 
+        //输入跳转页面
+        function changePage(obj){
+//            if(typeof(parseInt(obj))){
+//                alert("请输入数值!");
+//                return;
+//            }
 
-        function back() {
-            var pageNo = '<%=currentPage%>';
-            if (pageNo < 2) {
-                alert("当前已经是第一页");
+            <%--if(obj<1 || obj>${page.totlePage}){--%>
+                <%--alert("值范围超出");--%>
+                <%--return;--%>
+            <%--}--%>
+
+            var aa = obj.value;
+
+            if(isNaN(aa)){
+                alert("请输入数字");
                 return;
-            } else {
-                pageNo = Number(pageNo) - 1;
             }
-            with (document.getElementById("memberForm")) {
-                method = "post";
-                action = "<%=path %>/stuList.action?index=" + pageNo;
-                submit();
-            }
-        }
 
-        function next() {
-            var pageNo = '<%=currentPage%>';
-            var totlePage = '<%=totlePage%>';
-            if (pageNo == totlePage) {
-                alert("当前已经是最后一页");
+            if(aa<1||aa>${page.totlePage}){
+                alert("数值超出");
                 return;
-            } else {
-                pageNo = Number(pageNo) + 1;
             }
-            with (document.getElementById("memberForm")) {
+
+            with(document.getElementById("form1")){
                 method = "post";
-                action = "<%=path %>/stuList.action?index=" + pageNo;
+                action = "<%=path%>/stuList.action?index="+obj.value;
                 submit();
             }
         }
-
-        function last() {
-            var totlePage = '<%=totlePage%>';
-            with (document.getElementById("memberForm")) {
-                method = "post";
-                action = "<%=path %>/stuList.action?index=" + totlePage;
-                submit();
-            }
-        }
-
 
         function modify() {
             var count = 0;
@@ -141,7 +181,7 @@
             if (count == 1) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/BjServlet?mode=modifybefore&id=" + j;
+                    action = "<%=path %>/stuMb.action?id=" + j;
                     submit();
                 }
             }
@@ -168,7 +208,6 @@
                 }
             }
         }
-
 
         //]]>
     </SCRIPT>
@@ -200,72 +239,130 @@
                 <TABLE borderColor=#cccccc cellSpacing=0 cellPadding=0 width="100%"
                        align=center border=0>
                     <TBODY>
-                    <TR>
-                        <TD align=right height=25><INPUT id=boxListValue type=hidden
+                    <tr>
+                        <td align=right height=25><INPUT id=boxListValue type=hidden
                                                          name=boxListValue> <INPUT onclick=checkAll(this); type=checkbox
                                                                                    name="ifAll"> 全选
                             <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">修改</span>
                             <span onclick="deletes()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/083.gif">删除</span>
 
-                        </TD>
-                    </TR>
-                    <TR>
-                        <TD>
-                            <TABLE id=grid
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table id=grid
                                    style="BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #cccccc; WIDTH: 100%; BORDER-TOP-COLOR: #cccccc; FONT-STYLE: normal; BACKGROUND-COLOR: #cccccc; BORDER-RIGHT-WIDTH: 0px; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #cccccc"
                                    cellSpacing=1 cellPadding=2 rules=all border=0>
-                                <TBODY>
-                                <TR
+                                <tbody>
+                                <tr
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD>考号</TD>
-                                    <TD>姓名</TD>
-                                    <TD>密码</TD>
-                                    <TD>身份证</TD>
-                                    <TD>电话</TD>
-                                    <TD>操作</TD>
-                                </TR>
-                                <%
-                                    for (int i = 0; i < list.size(); i++) {
-                                        Stu bean = (Stu) list.get(i);
-                                %>
-                                <TR
-                                        style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-                                    <TD><%=bean.getUserNo() %>
-                                    </TD>
-                                    <TD><%=bean.getRealName() %>
-                                    </TD>
-                                    <TD><%=bean.getPassword() %>
-                                    </TD>
-                                    <TD><%=bean.getCardno() %>
-                                    </TD>
-                                    <TD><%=bean.getTel() %>
-                                    </TD>
-                                    <TD><INPUT id="selectFlag"
-                                               type="checkbox" name="selectFlag" value="<%=bean.getId()%>"></TD>
-                                </TR>
-                                <%} %>
-                                <tr/>
-                                <hr style="height:1px;border:none;border-top:1px solid #555555;"/>
-                                </TBODY>
-                            </TABLE>
-                        </TD>
-                    </TR>
+                                    <td>考号</td>
+                                    <td>姓名</td>
+                                    <td>密码</td>
+                                    <td>身份证</td>
+                                    <td>电话</td>
+                                    <td>操作</td>
+                                </tr>
+                                <%--<%--%>
+                                    <%--for (int i = 0; i < list.size(); i++) {--%>
+                                        <%--Stu bean = (Stu) list.get(i);--%>
+                                <%--%>--%>
+                                <%--<tr--%>
+                                        <%--style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">--%>
+                                    <%--<td><%=bean.getUserNo() %>--%>
+                                    <%--</td>--%>
+                                    <%--<td><%=bean.getRealName() %>--%>
+                                    <%--</td>--%>
+                                    <%--<td><%=bean.getPassword() %>--%>
+                                    <%--</td>--%>
+                                    <%--<td><%=bean.getCardno() %>--%>
+                                    <%--</td>--%>
+                                    <%--<td><%=bean.getTel() %>--%>
+                                    <%--</td>--%>
+                                    <%--<td><INPUT id="selectFlag"--%>
+                                               <%--type="checkbox" name="selectFlag" value="<%=bean.getId()%>"></td>--%>
+                                <%--</tr>--%>
+                                <%--<%} %>--%>
+                                <%--<tr/>--%>
+
+                                <c:forEach items="${page.data}" var="bean">
+                                    <tr>
+                                        <td>${bean.userNo}</td>
+                                        <td>${bean.realName}</td>
+                                        <td>${bean.password}</td>
+                                        <td>${bean.cardno}</td>
+                                        <td>${bean.tel}</td>
+                                        <td><input id="selectFlag" type="checkbox" name="selectFlag" value="${bean.id}"></td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
 
 
-                    <TR>
-                        <TD align=center height=25>
 
-                            <span onclick="frist()"> <img alt=""
-                                                          src="<%=path %>/admin/YHChannelApply.files/page_first_1.gif"></span>
-                            <span onclick="back()"> <img alt=""
-                                                         src="<%=path %>/admin/YHChannelApply.files/page_back_1.gif"></span>
-                            <span onclick="next()"> <img alt=""
-                                                         src="<%=path %>/admin/YHChannelApply.files/page_next.gif"></span>
-                            <span onclick="last()"> <img alt=""
-                                                         src="<%=path %>/admin/YHChannelApply.files/page_last.gif"></span>
+                    <!--原始的分页逻辑-->
+                    <%--<TR>--%>
+                    <%--<TD align=center height=25>--%>
 
-                        </TD>
-                    </TR>
+                    <%--<span onclick="frist()"> <img alt=""--%>
+                    <%--src="<%=path %>/admin/YHChannelApply.files/page_first_1.gif"></span>--%>
+                    <%--<span onclick="back()"> <img alt=""--%>
+                    <%--src="<%=path %>/admin/YHChannelApply.files/page_back_1.gif"></span>--%>
+                    <%--<span onclick="next()"> <img alt=""--%>
+                    <%--src="<%=path %>/admin/YHChannelApply.files/page_next.gif"></span>--%>
+                    <%--<span onclick="last()"> <img alt=""--%>
+                    <%--src="<%=path %>/admin/YHChannelApply.files/page_last.gif"></span>--%>
+                    <%--</TD>--%>
+                    <%--</TR>--%>
+
+                    <!--期望完成目标-->
+                    <tr>
+                        <td>
+                            <div id="fy_div">
+                                共${page.totle}条记录 共${page.totlePage}页 <a
+                                    href="javascript:void(0)" onclick="changePageA(1)">首页</a> <a
+                                    href="javascript:void(0)" onclick="changePageA(${page.prePage})">上一页</a>
+                                <%-- 分页逻辑开始 --%>
+                                <c:set var="begin" value="0" scope="page"/>
+                                <c:set var="end" value="0" scope="page"/>
+                                <c:if test="${page.totlePage<=5}">
+                                    <c:set var="begin" value="1" scope="page"/>
+                                    <c:set var="end" value="${page.totlePage}" scope="page"/>
+                                </c:if>
+                                <c:if test="${page.totlePage>5}">
+                                    <c:choose>
+                                        <c:when test="${page.index<=3 }">
+                                            <c:set var="begin" value="1" scope="page"/>
+                                            <c:set var="end" value="5" scope="page"/>
+                                        </c:when>
+                                        <c:when test="${page.index>=page.totlePage-2 }">
+                                            <c:set var="begin" value="${page.totlePage-4}" scope="page"/>
+                                            <c:set var="end" value="${page.totlePage}" scope="page"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:set var="begin" value="${page.index-2}" scope="page"/>
+                                            <c:set var="end" value="${page.index+2}" scope="page"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:if>
+                                <%--遍历页码 --%>
+                                <c:forEach begin="${begin}" end="${end}" step="1" var="i">
+                                    <c:if test="${page.index==i }">${i}</c:if>
+                                    <c:if test="${page.index!=i }">
+                                        <a href="javascript:void(0)" onclick="changePageA(${i})">${i}</a>
+                                    </c:if>
+                                </c:forEach>
+                                <%-- 分页逻辑结束 --%>
+                                <a href="javascript:void(0)" onclick="changePageA(${page.nextPage})">下一页</a>
+                                <a href="javascript:void(0)" onclick="changePageA(${page.totlePage})">尾页</a>
+                                跳转到<input type="text" value="${page.index }"
+                                          onblur="changePage(this)"/>页
+                            </div>
+                        </td>
+                    </tr>
+
                     </TBODY>
                 </TABLE>
             </TD>
@@ -285,8 +382,8 @@
         </TR>
         </TBODY>
     </TABLE>
-</FORM>
-</BODY>
+</form>
+</body>
 </HTML>
 
 

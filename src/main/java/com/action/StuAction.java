@@ -37,7 +37,7 @@ public class StuAction extends ActionSupport {
     private String message;
     private String path;
     private StuDAO dao;
-    private int index = 1;
+    private int index = 1;//设置初始值
     private File image; // 上传的文件
     private String imageFileName; // 文件名称 p
     private String imageContentType; // 文件类型
@@ -95,12 +95,40 @@ public class StuAction extends ActionSupport {
         return "succeed";
     }
 
+    //学生信息修改之前
     public String modifybefore() {
 
-        Stu demo = dao.findById(Integer.parseInt(selectFlag[0]));
+        Stu demo = dao.findById(id);
         HttpServletRequest request = ServletActionContext.getRequest();
         request.setAttribute("bean", demo);
         return "mb";
+    }
+
+    //修改学生信息
+    public String modify() {
+        Stu demo = dao.findById(id);
+        demo.setUserNo(userNo);
+        demo.setRealName(realName);
+        demo.setPassword(password);
+        demo.setCardno(cardno);
+        demo.setTel(tel);
+
+        dao.merge(demo);
+        this.setMessage("修改成功");
+        this.setPath("stuList.action");
+        return "succeed";
+    }
+
+    public String myselfmodify() {
+        Stu demo = dao.findById(id);
+        demo.setCardno(cardno);
+        demo.setPassword(password);
+        demo.setRealName(realName);
+        demo.setTel(tel);
+        dao.merge(demo);
+        this.setMessage("修改成功");
+        this.setPath("myself.action");
+        return "succeed";
     }
 
     public String myself() {
@@ -115,46 +143,28 @@ public class StuAction extends ActionSupport {
     }
 
 
-    public String myselfmodify() {
-        Stu demo = dao.findById(id);
-        demo.setCardno(cardno);
-        demo.setPassword(password);
-        demo.setRealName(realName);
-        demo.setTel(tel);
-        dao.merge(demo);
-        this.setMessage("修改成功");
-        this.setPath("myself.action");
-        return "succeed";
-    }
-
-
-    public String modify() {
-        Stu demo = dao.findById(id);
-        // demo.setTitle(title);
-        // demo.setA(a);
-        // demo.setB(b);
-        // demo.setC(c);
-        // demo.setD(d);
-        // demo.setDa(da);
-        dao.merge(demo);
-        this.setMessage("修改成功");
-        this.setPath("StuList.action");
-        return "succeed";
-    }
-
     public String all() {
 
         List list = new ArrayList();
         list = dao.findAll();
 
-        int pageSize = 10;
+        int pageSize = 20;
+        int totlePages = 0;
         int fromIndex = (index - 1) * pageSize;
         int toIndex = Math.min(fromIndex + pageSize, list.size());
         List adminListFenye = list.subList(fromIndex, toIndex);
 
         Pagination p = new Pagination();// 创建 分页对象
-        p.setIndex(index);// 设置页数
-        p.setPageSize(pageSize);
+        p.setIndex(index);// 设置当前页
+        p.setPrePage(index==1?1:index-1);//设置上一页页码
+
+
+        totlePages = list.size()%pageSize==0?list.size()/pageSize:list.size()/pageSize+1;
+        p.setTotlePage(totlePages);//设置总页面数
+
+        p.setNextPage(index==totlePages?totlePages:index+1);//设置下一页页码
+
+        p.setPageSize(pageSize);//每页显示都少条数据
         p.setTotle(list.size());// 设置总共的条数
         p.setData(adminListFenye);// 设置数据
         p.setPath("stuList.action");// 跳转的路径
@@ -170,6 +180,14 @@ public class StuAction extends ActionSupport {
         Map request = (Map) ServletActionContext.getContext().get("request");
         request.put("list", list);
         return ActionSupport.SUCCESS;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public StuDAO getDao() {
