@@ -108,6 +108,7 @@ A.active {
 </SCRIPT>
 <BODY>
 	<FORM id=form1 name=form1 action=YHMenu.aspx method=post>
+
 		<TABLE cellSpacing=0 cellPadding=0 width=210 align=center border=0>
 			<TBODY>
 				<TR>
@@ -239,6 +240,10 @@ A.active {
 									} else if (type == 2) {
 								%>
 
+								<!--添加隐藏域信息-->
+								<!--当且仅但用户为教师时才会传递这个参数-->
+								<%--<input type="hidden" value="${subjectInfo}" name="subjectInfo">--%>
+
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_1');"><SPAN
 										class=span id=table_1Span><img
@@ -258,7 +263,7 @@ A.active {
 												</TR>
 												<TR>
 													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/dxtList.action'
+														class=style2 href='<%=path%>/dxtList.action?subjectInfo=${subjectInfo}'
 														target=dmMain>单选题管理</A>
 													</TD>
 												</TR>
@@ -270,7 +275,7 @@ A.active {
 												</TR>
 												<TR>
 													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ddxtList.action'
+														class=style2 href='<%=path%>/ddxtList.action?subjectInfo=${subjectInfo}'
 														target=dmMain>多选题管理</A>
 													</TD>
 												</TR>
@@ -282,18 +287,20 @@ A.active {
 												</TR>
 												<TR>
 													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/pdList.action' target=dmMain>判断题管理</A>
+														class=style2 href='<%=path%>/pdList.action?subjectInfo=${subjectInfo}'
+														target=dmMain>判断题管理</A>
 													</TD>
 												</TR>
 												<TR>
 													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
 														class=style2 href='<%=path%>/admin/bcAdd.jsp'
-														target=dmMain>计算题添加</A>
+														target=dmMain>填空题添加</A>
 													</TD>
 												</TR>
 												<TR>
 													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/bcList.action' target=dmMain>计算题管理</A>
+														class=style2 href='<%=path%>/bcList.action?subjectInfo=${subjectInfo}'
+														target=dmMain>填空题管理</A>
 													</TD>
 												</TR>
 											</TBODY>

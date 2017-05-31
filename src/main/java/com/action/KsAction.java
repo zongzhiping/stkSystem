@@ -68,7 +68,7 @@ public class KsAction extends ActionSupport {
 		return "succeed";
 	}
 
-	public String add2() {
+	public String add2(Integer subjectInfo) {
 
 		int totle = 0;
 		if (dxtsl != null && dxtfz != null && !dxtfz.equals("")
@@ -140,7 +140,7 @@ public class KsAction extends ActionSupport {
 			if (dxtsl != null && dxtfz != null && !dxtfz.equals("")
 					&& !dxtsl.equals("")) {
 				Random random = new Random();
-				List list = dxtdao.findAll();
+				List list = dxtdao.findAll(subjectInfo);
 				for (int i = 0; i < Integer.parseInt(dxtsl); i++) {
 					int a = Math.abs(random.nextInt()) % list.size();
 					Dxt bean = (Dxt) list.get(a);
@@ -156,7 +156,7 @@ public class KsAction extends ActionSupport {
 
 			if (ddxtsl != null && ddxtfz != null && !ddxtsl.equals("")
 					&& !ddxtfz.equals("")) {
-				List list = ddxtdao.findAll();
+				List list = ddxtdao.findAll(subjectInfo);
 				Random random = new Random();
 				for (int i = 0; i < Integer.parseInt(ddxtsl); i++) {
 

@@ -62,11 +62,11 @@
                 document.getElementsByName("selectFlag")[i].onclick = function () {
                     var flag = true;
                     for (var j = 0; j < len; j++) {
-                        if (!document.getElementsByName()[j].checked) {
+                        if (!document.getElementsByName("selectFlag")[j].checked) {
                             flag = false;
                         }
                     }
-                    document.getElementById("boxListValue").checked = flag;
+                    document.getElementById("allbox").checked = flag;
                 }
             }
         }
@@ -190,10 +190,13 @@
         function deletes() {
             var flag = false;
             var j = 0;
+            var arrayObj = new Array();
+            var a = 0;//记录所选中的数据
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
                 if (document.getElementsByName("selectFlag")[i].checked) {
                     flag = true;
-                    j = document.getElementsByName("selectFlag")[i].value;
+                    j = document.getElementsByName("selectFlag")[i].value;//获取id
+                    a = arrayObj.push(j);
                 }
             }
             if (!flag) {
@@ -203,7 +206,7 @@
             if (window.confirm("确认删除吗？")) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/stuDel.action?id=" + j;
+                    action = "<%=path %>/stuDel.action?idList=" + arrayObj;
                     submit();
                 }
             }
@@ -240,9 +243,11 @@
                        align=center border=0>
                     <TBODY>
                     <tr>
-                        <td align=right height=25><INPUT id=boxListValue type=hidden
-                                                         name=boxListValue> <INPUT onclick=checkAll(this); type=checkbox
-                                                                                   name="ifAll"> 全选
+                        <td align=right height=25>
+                            <INPUT id=boxListValue type=hidden
+                                   name=boxListValue>
+                            <INPUT onclick=checkAll(this); type=checkbox id="allbox"
+                                   name="ifAll"> 全选
                             <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">修改</span>
                             <span onclick="deletes()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/083.gif">删除</span>
 

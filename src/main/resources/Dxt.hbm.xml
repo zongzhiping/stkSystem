@@ -22,9 +22,11 @@
          <property name="d" type="java.lang.String">
             <column name="d" length="50" />
         </property>
-        
         <property name="da" type="java.lang.String">
             <column name="da" length="50" />
+        </property>
+        <property name="subjectInfo" type="java.lang.Integer">
+            <column name="subject_info"/>
         </property>
     </class>
 </hibernate-mapping>

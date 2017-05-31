@@ -42,7 +42,7 @@ function add()
 //]]>
 </SCRIPT>
 <FORM id="ThisForm" name= "ThisForm"
-action="<%=path %>/dxtAdd.action"
+action="<%=path %>/dxtAdd.action?subjectInfo=${subjectInfo}"
 method=post>
 <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
   <TBODY>

@@ -45,10 +45,10 @@ public class DxtDAO  extends HibernateDaoSupport {
 		}
 	}
 	
-	public List findAll() {
+	public List findAll(Integer subjectInfo) {
 		log.debug("finding all Dxt instances");
 		try {
-			String queryString = " from Dxt";
+			String queryString = " from Dxt as model where model.subjectInfo="+subjectInfo;
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -56,16 +56,16 @@ public class DxtDAO  extends HibernateDaoSupport {
 		}
 	}
 	
-	public List findAll(int tid) {
-		log.debug("finding all Bc instances");
-		try {
-			String queryString = " from Dxt as model where model.teaid="+tid;
-			return getHibernateTemplate().find(queryString);
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
-	}
+//	public List findAll(int tid) {
+//		log.debug("finding all Bc instances");
+//		try {
+//			String queryString = " from Dxt as model where model.teaid="+tid;
+//			return getHibernateTemplate().find(queryString);
+//		} catch (RuntimeException re) {
+//			log.error("find all failed", re);
+//			throw re;
+//		}
+//	}
 	
 	public Dxt merge(Dxt detachedInstance) {
 		log.debug("merging Dxt instance");

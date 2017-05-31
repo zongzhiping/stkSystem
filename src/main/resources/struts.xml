@@ -25,16 +25,16 @@
             <result name="yes">/loginSuccess.jsp</result>
             <result name="no">/WEB-INF/pages/sysadmin/login/login.jsp</result>
         </action>
-        <!-- 教师登入 -->
-         <action name="teacherLogin" class="loginAction" method="teacherLogin">
-             <result name="yes">/loginSuccess.jsp</result>
-             <result name="no">/login.jsp</result>
-        </action>
-        <!-- 学生登入 -->
-         <action name="stuLogin" class="loginAction" method="stuLogin">
-             <result name="yes">/loginSuccess.jsp</result>
-             <result name="no">/login.jsp</result>
-        </action>
+        <!--&lt;!&ndash; 教师登入 &ndash;&gt;-->
+         <!--<action name="teacherLogin" class="loginAction" method="teacherLogin">-->
+             <!--<result name="yes">/loginSuccess.jsp</result>-->
+             <!--<result name="no">/login.jsp</result>-->
+        <!--</action>-->
+        <!--&lt;!&ndash; 学生登入 &ndash;&gt;-->
+         <!--<action name="stuLogin" class="loginAction" method="stuLogin">-->
+             <!--<result name="yes">/loginSuccess.jsp</result>-->
+             <!--<result name="no">/login.jsp</result>-->
+        <!--</action>-->
 
         <!-- 教师列表 -->
         <action name="teaList" class="loginAction" method="all">
@@ -171,18 +171,14 @@
         <!--学生修改-->
         <action name="stuEdit" class="stuAction" method="modify">
         </action>
-
-
-        
+        <!-- 学生删除 -->
+        <action name="stuDel" class="stuAction" method="delete">
+        </action>
         <!--我的信息 -->
         <action name="myself" class="stuAction" method="myself">
           <result name="list">/admin/myself.jsp</result>
         </action>
         <action name="myselfmodify" class="stuAction" method="myselfmodify">
-        </action>
-        
-          <!-- 学生删除 -->
-        <action name="stuDel" class="stuAction" method="delete">
         </action>
         
           <!-- 考试题添加 -->

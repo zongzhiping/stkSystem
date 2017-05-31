@@ -9,6 +9,7 @@ public class Ddxt implements java.io.Serializable{
 	private String c;
 	private String d;
 	private String da;
+	private Integer subjectInfo;
 	public int getId() {
 		return id;
 	}
@@ -51,6 +52,15 @@ public class Ddxt implements java.io.Serializable{
 	public void setDa(String da) {
 		this.da = da;
 	}
+
+	public Integer getSubjectInfo() {
+		return subjectInfo;
+	}
+
+	public void setSubjectInfo(Integer subjectInfo) {
+		this.subjectInfo = subjectInfo;
+	}
+
 	public Ddxt() {
 	}
 }

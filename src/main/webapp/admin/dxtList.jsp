@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ page import="com.util.*" %>
 <%@ page import="com.model.*" %>
@@ -19,10 +21,9 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD id=Head1><TITLE>模板</TITLE>
     <META http-equiv=Content-Type content="text/html; charset=utf-8">
-    <LINK
-            href="<%=path %>/admin/YHChannelApply.files/Style.css" type=text/css rel=stylesheet>
-    <LINK
-            href="<%=path %>/admin/YHChannelApply.files/Manage.css" type=text/css rel=stylesheet>
+    <link href="<%=path %>/admin/YHChannelApply.files/Style.css" type=text/css rel=stylesheet>
+    <link href="<%=path %>/admin/YHChannelApply.files/Manage.css" type=text/css rel=stylesheet>
+    <link href="<%=path%>/css/page.css" type="text/css" rel="stylesheet">
     <SCRIPT language=javascript src="<%=path %>/admin/YHChannelApply.files/FrameDiv.js"></SCRIPT>
 
     <SCRIPT language=javascript src="<%=path %>/admin/YHChannelApply.files/Common.js"></SCRIPT>
@@ -35,74 +36,58 @@
 
       method=post>
     <SCRIPT type=text/javascript>
-        //<![CDATA[
-        var theForm = document.forms['form1'];
-        if (!theForm) {
-            theForm = document.form1;
-        }
-        function __doPostBack(eventTarget, eventArgument) {
-            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                theForm.__EVENTTARGET.value = eventTarget;
-                theForm.__EVENTARGUMENT.value = eventArgument;
-                theForm.submit();
-            }
-        }
 
-
-        function checkAll() {
+        function checkAll(obj) {
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
-                document.getElementsByName("selectFlag")[i].checked = document.getElementById("ifAll").checked;
+                document.getElementsByName("selectFlag")[i].checked = obj.checked;
             }
         }
 
-        function frist() {
-            with (document.getElementById("memberForm")) {
+        window.onload = function () {
+            var len = document.getElementsByName("selectFlag").length;
+            for (var i = 0; i < len; i++) {
+                document.getElementsByName("selectFlag")[i].onclick = function () {
+                    var flag = true;
+                    for (var j = 0; j < len; j++) {
+                        if (!document.getElementsByName("selectFlag")[j].checked) {
+                            flag = false;
+                        }
+                    }
+                    document.getElementById("allbox").checked = flag;
+                }
+            }
+        }
+
+        //页面跳转js
+        function  changePageA(obj) {
+            with (document.getElementById("form1")){
                 method = "post";
-                action = "<%=path %>/dxtList.action?index=1";
+                action = "<%=path%>/dxtList.action?index="+obj+"&subjectInfo=${subjectInfo}";
                 submit();
             }
         }
 
+        //输入跳转页面
+        function changePage(obj){
+            var aa = obj.value;
 
-        function back() {
-            var pageNo = '<%=currentPage%>';
-            if (pageNo < 2) {
-                alert("当前已经是第一页");
+            if(isNaN(aa)){
+                alert("请输入数字");
                 return;
-            } else {
-                pageNo = Number(pageNo) - 1;
             }
-            with (document.getElementById("memberForm")) {
-                method = "post";
-                action = "<%=path %>/dxtList.action?index=" + pageNo;
-                submit();
-            }
-        }
 
-        function next() {
-            var pageNo = '<%=currentPage%>';
-            var totlePage = '<%=totlePage%>';
-            if (pageNo == totlePage) {
-                alert("当前已经是最后一页");
+            if(aa<1||aa>${page.totlePage}){
+                alert("数值超出");
                 return;
-            } else {
-                pageNo = Number(pageNo) + 1;
             }
-            with (document.getElementById("memberForm")) {
+
+            with(document.getElementById("form1")){
                 method = "post";
-                action = "<%=path %>/dxtList.action?index=" + pageNo;
+                action = "<%=path%>/dxtList.action?index="+obj.value+"&subjectInfo=${subjectInfo}";
                 submit();
             }
         }
 
-        function last() {
-            var totlePage = '<%=totlePage%>';
-            with (document.getElementById("memberForm")) {
-                method = "post";
-                action = "<%=path %>/dxtList.action?index=" + totlePage;
-                submit();
-            }
-        }
 
 
         function modify() {
@@ -134,10 +119,13 @@
         function deletes() {
             var flag = false;
             var j = 0;
+            var arrayObj = new Array();
+            var a = 0;//记录所选中的数据
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
                 if (document.getElementsByName("selectFlag")[i].checked) {
                     flag = true;
-                    j = document.getElementsByName("selectFlag")[i].value;
+                    j = document.getElementsByName("selectFlag")[i].value;//获取id
+                    a = arrayObj.push(j);
                 }
             }
             if (!flag) {
@@ -147,14 +135,12 @@
             if (window.confirm("确认删除吗？")) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/ddxtDel.action?id=" + j;
+                    action = "<%=path %>/dxtDel.action?idList=" + arrayObj;
                     submit();
                 }
             }
         }
 
-
-        //]]>
     </SCRIPT>
 
     <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
@@ -186,19 +172,19 @@
                     <TBODY>
                     <TR>
                         <TD align=right height=25><INPUT id=boxListValue type=hidden
-                                                         name=boxListValue> <INPUT onclick=checkAll(); type=checkbox
+                                                         name=boxListValue> <INPUT id="allbox" onclick=checkAll(this); type=checkbox
                                                                                    name="ifAll"> 全选
                             <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">修改</span>
                             <span onclick="deletes()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/083.gif">删除</span>
 
                         </TD>
                     </TR>
-                    <TR>
-                        <TD>
-                            <TABLE id=grid
+                    <tr>
+                        <td>
+                            <table id=grid
                                    style="BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #cccccc; WIDTH: 100%; BORDER-TOP-COLOR: #cccccc; FONT-STYLE: normal; BACKGROUND-COLOR: #cccccc; BORDER-RIGHT-WIDTH: 0px; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #cccccc"
                                    cellSpacing=1 cellPadding=2 rules=all border=0>
-                                <TBODY>
+                                <tbody>
                                 <TR
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
                                     <TD>题目</TD>
@@ -209,47 +195,91 @@
                                     <TD>答案</TD>
                                     <TD>操作</TD>
                                 </TR>
-                                <%
-                                    for (int i = 0; i < list.size(); i++) {
-                                        Dxt bean = (Dxt) list.get(i);
-                                %>
-                                <TR
-                                        style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-                                    <TD><%=bean.getTitle() %>
-                                    </TD>
-                                    <TD><%=bean.getA() %>
-                                    </TD>
-                                    <TD><%=bean.getB() %>
-                                    </TD>
-                                    <TD><%=bean.getC() %>
-                                    </TD>
-                                    <TD><%=bean.getD() %>
-                                    </TD>
-                                    <TD><%=bean.getDa() %>
-                                    </TD>
-                                    <TD><INPUT id="selectFlag"
-                                               type="checkbox" name="selectFlag" value="<%=bean.getId()%>"></TD>
-                                </TR>
-                                <%} %>
 
-                                </TBODY>
-                            </TABLE>
-                        </TD>
-                    </TR>
-                    <TR>
-                        <TD align=right height=25>
+                                <c:forEach items="${page.data}" var="bean">
+                                   <tr>
+                                       <td>${bean.title}</td>
+                                       <td>${bean.a}</td>
+                                       <td>${bean.b}</td>
+                                       <td>${bean.c}</td>
+                                       <td>${bean.d}</td>
+                                       <td>${bean.da}</td>
+                                       <td><input name="selectFlag" type="checkbox" value="${bean.id}"></td>
+                                   </tr>
+                                </c:forEach>
 
-                            <span onclick="frist()"> <img alt=""
-                                                          src="<%=path %>/admin/YHChannelApply.files/page_first_1.gif"></span>
-                            <span onclick="back()"> <img alt=""
-                                                         src="<%=path %>/admin/YHChannelApply.files/page_back_1.gif"></span>
-                            <span onclick="next()"> <img alt=""
-                                                         src="<%=path %>/admin/YHChannelApply.files/page_next.gif"></span>
-                            <span onclick="last()"> <img alt=""
-                                                         src="<%=path %>/admin/YHChannelApply.files/page_last.gif"></span>
+                                <%--<%--%>
+                                    <%--for (int i = 0; i < list.size(); i++) {--%>
+                                        <%--Dxt bean = (Dxt) list.get(i);--%>
+                                <%--%>--%>
+                                <%--<tr--%>
+                                        <%--style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">--%>
+                                    <%--<TD><%=bean.getTitle() %>--%>
+                                    <%--</TD>--%>
+                                    <%--<TD><%=bean.getA() %>--%>
+                                    <%--</TD>--%>
+                                    <%--<TD><%=bean.getB() %>--%>
+                                    <%--</TD>--%>
+                                    <%--<TD><%=bean.getC() %>--%>
+                                    <%--</TD>--%>
+                                    <%--<TD><%=bean.getD() %>--%>
+                                    <%--</TD>--%>
+                                    <%--<TD><%=bean.getDa() %>--%>
+                                    <%--</TD>--%>
+                                    <%--<TD><INPUT id="selectFlag"--%>
+                                               <%--type="checkbox" name="selectFlag" value="<%=bean.getId()%>"></TD>--%>
+                                <%--</tr>--%>
+                                <%--<%} %>--%>
 
-                        </TD>
-                    </TR>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div id="fy_div">
+                                共${page.totle}条记录 共${page.totlePage}页 <a
+                                    href="javascript:void(0)" onclick="changePageA(1)">首页</a> <a
+                                    href="javascript:void(0)" onclick="changePageA(${page.prePage})">上一页</a>
+                                <%-- 分页逻辑开始 --%>
+                                <c:set var="begin" value="0" scope="page"/>
+                                <c:set var="end" value="0" scope="page"/>
+                                <c:if test="${page.totlePage<=5}">
+                                    <c:set var="begin" value="1" scope="page"/>
+                                    <c:set var="end" value="${page.totlePage}" scope="page"/>
+                                </c:if>
+                                <c:if test="${page.totlePage>5}">
+                                    <c:choose>
+                                        <c:when test="${page.index<=3 }">
+                                            <c:set var="begin" value="1" scope="page"/>
+                                            <c:set var="end" value="5" scope="page"/>
+                                        </c:when>
+                                        <c:when test="${page.index>=page.totlePage-2 }">
+                                            <c:set var="begin" value="${page.totlePage-4}" scope="page"/>
+                                            <c:set var="end" value="${page.totlePage}" scope="page"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:set var="begin" value="${page.index-2}" scope="page"/>
+                                            <c:set var="end" value="${page.index+2}" scope="page"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:if>
+                                <%--遍历页码 --%>
+                                <c:forEach begin="${begin}" end="${end}" step="1" var="i">
+                                    <c:if test="${page.index==i }">${i}</c:if>
+                                    <c:if test="${page.index!=i }">
+                                        <a href="javascript:void(0)" onclick="changePageA(${i})">${i}</a>
+                                    </c:if>
+                                </c:forEach>
+                                <%-- 分页逻辑结束 --%>
+                                <a href="javascript:void(0)" onclick="changePageA(${page.nextPage})">下一页</a>
+                                <a href="javascript:void(0)" onclick="changePageA(${page.totlePage})">尾页</a>
+                                跳转到<input type="text" value="${page.index }"
+                                          onblur="changePage(this)"/>页
+                            </div>
+                        </td>
+                    </tr>
                     </TBODY>
                 </TABLE>
             </TD>

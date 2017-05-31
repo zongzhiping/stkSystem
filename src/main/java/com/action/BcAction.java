@@ -19,22 +19,19 @@ public class BcAction extends ActionSupport {
 	private int id;
 	private String[] selectFlag;
 	private String title;
-	private String a;
-	private String b;
-	private String c;
-	private String d;
 	private String da;
 	private String message;
 	private String path;
 	private BcDAO dao;
 	private int index = 1;
+
 	public String add() {
 		Bc demo = new Bc();
 		demo.setTitle(title);
 		demo.setDa(da);
 		dao.save(demo);
 		this.setMessage("Ìí¼Ó³É¹¦");
-		this.setPath("admin/bcAdd.jsp");
+		this.setPath("bcList.action");
 		return "succeed";
 	}
 
@@ -110,10 +107,6 @@ public class BcAction extends ActionSupport {
 		return dao;
 	}
 
-	public void setDao(BcDAO dao) {
-		this.dao = dao;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -122,6 +115,29 @@ public class BcAction extends ActionSupport {
 		this.id = id;
 	}
 
+	public String[] getSelectFlag() {
+		return selectFlag;
+	}
+
+	public void setSelectFlag(String[] selectFlag) {
+		this.selectFlag = selectFlag;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDa() {
+		return da;
+	}
+
+	public void setDa(String da) {
+		this.da = da;
+	}
 
 	public String getMessage() {
 		return message;
@@ -138,59 +154,16 @@ public class BcAction extends ActionSupport {
 	public void setPath(String path) {
 		this.path = path;
 	}
-	public String getTitle() {
-		return title;
+
+	public void setDao(BcDAO dao) {
+		this.dao = dao;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public int getIndex() {
+		return index;
 	}
 
-	public String getA() {
-		return a;
-	}
-
-	public void setA(String a) {
-		this.a = a;
-	}
-
-	public String getB() {
-		return b;
-	}
-
-	public void setB(String b) {
-		this.b = b;
-	}
-
-	public String getC() {
-		return c;
-	}
-
-	public void setC(String c) {
-		this.c = c;
-	}
-
-	public String getD() {
-		return d;
-	}
-
-	public void setD(String d) {
-		this.d = d;
-	}
-
-	public String getDa() {
-		return da;
-	}
-
-	public void setDa(String da) {
-		this.da = da;
-	}
-	
-	public String[] getSelectFlag() {
-		return selectFlag;
-	}
-
-	public void setSelectFlag(String[] selectFlag) {
-		this.selectFlag = selectFlag;
+	public void setIndex(int index) {
+		this.index = index;
 	}
 }

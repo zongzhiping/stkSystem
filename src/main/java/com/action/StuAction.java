@@ -21,6 +21,7 @@ import com.util.Pagination;
 public class StuAction extends ActionSupport {
 
     private int id;
+    private String idList;
     private String password;
     private String userNo;
     private String realName;
@@ -88,8 +89,16 @@ public class StuAction extends ActionSupport {
     }
 
     public String delete() {
-        Stu demo = dao.findById(id);
-        dao.delete(demo);
+
+        //前台数据解析
+       String idLists[] = idList.split(",");
+
+        for (String id:idLists
+             ) {
+            int ida = Integer.parseInt(id);
+            Stu demo = dao.findById(ida);
+            dao.delete(demo);
+        }
         this.setMessage("操作成功");
         this.setPath("stuList.action");
         return "succeed";
@@ -180,6 +189,14 @@ public class StuAction extends ActionSupport {
         Map request = (Map) ServletActionContext.getContext().get("request");
         request.put("list", list);
         return ActionSupport.SUCCESS;
+    }
+
+    public String getIdList() {
+        return idList;
+    }
+
+    public void setIdList(String idList) {
+        this.idList = idList;
     }
 
     public int getIndex() {

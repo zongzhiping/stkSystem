@@ -17,6 +17,7 @@ import com.util.Pagination;
 public class DxtAction extends ActionSupport {
 
 	private int id;
+	private String idList;
 	private String[] selectFlag;
 	private String title;
 	private String a;
@@ -24,10 +25,12 @@ public class DxtAction extends ActionSupport {
 	private String c;
 	private String d;
 	private String da;
+	private int subjectInfo;
 	private String message;
 	private String path;
 	private DxtDAO dao;
 	private int index = 1;
+
 	public String add() {
 		Dxt demo = new Dxt();
 		demo.setTitle(title);
@@ -36,18 +39,22 @@ public class DxtAction extends ActionSupport {
 		demo.setC(c);
 		demo.setD(d);
 		demo.setDa(da);
+		demo.setSubjectInfo(subjectInfo);
 		dao.save(demo);
 		this.setMessage("添加成功");
-		this.setPath("admin/dxtAdd.jsp");
+		this.setPath("dxtList.action");
 		return "succeed";
 	}
 
 	public String delete() {
-		
-		System.out.println("================  "+selectFlag.length);
-		for (int i = 0; i < selectFlag.length; i++) {
-			System.out.println("================  "+selectFlag[i]);
-			Dxt demo = dao.findById(Integer.parseInt(selectFlag[i]));
+
+		//前台数据解析
+		String idLists[] = idList.split(",");
+
+		for (String id:idLists
+				) {
+			int ida = Integer.parseInt(id);
+			Dxt demo = dao.findById(ida);
 			dao.delete(demo);
 		}
 		this.setMessage("操作成功");
@@ -78,35 +85,44 @@ public class DxtAction extends ActionSupport {
 	}
 
 	public String all() {
-		
-		List list = new ArrayList();
-		list = dao.findAll();
 
-		int pageSize = 10;
+		List list = new ArrayList();
+		list = dao.findAll(subjectInfo);
+
+		int pageSize = 20;
+		int totlePages = 0;
 		int fromIndex = (index - 1) * pageSize;
 		int toIndex = Math.min(fromIndex + pageSize, list.size());
 		List adminListFenye = list.subList(fromIndex, toIndex);
 
 		Pagination p = new Pagination();// 创建 分页对象
-		p.setIndex(index);// 设置页数
-		p.setPageSize(pageSize);
+		p.setIndex(index);// 设置当前页
+		p.setPrePage(index==1?1:index-1);//设置上一页页码
+
+
+		totlePages = list.size()%pageSize==0?list.size()/pageSize:list.size()/pageSize+1;
+		p.setTotlePage(totlePages);//设置总页面数
+
+		p.setNextPage(index==totlePages?totlePages:index+1);//设置下一页页码
+
+		p.setPageSize(pageSize);//每页显示都少条数据
 		p.setTotle(list.size());// 设置总共的条数
 		p.setData(adminListFenye);// 设置数据
-		p.setPath("stuList.action");// 跳转的路径
+		p.setPath("dxtList.action");// 跳转的路径
 
 		Map request = (Map) ServletActionContext.getContext().get("request");
 		request.put("page", p);
 		return "list";
 	}
 	
-	public String szddxtList() {
-		ActionContext actionContext = ActionContext.getContext();
-		Map session = actionContext.getSession();
-		List list = dao.findAll();
-		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("list", list);
-		return "list";
-	}
+//	public String szddxtList() {
+//		ActionContext actionContext = ActionContext.getContext();
+//		Map session = actionContext.getSession();
+//		List list = dao.findAll();
+//		HttpServletRequest request = ServletActionContext.getRequest();
+//		request.setAttribute("list", list);
+//		return "list";
+//	}
 
 	public String search() {
 		List list = dao.findByProperty("", "");
@@ -201,5 +217,21 @@ public class DxtAction extends ActionSupport {
 
 	public void setSelectFlag(String[] selectFlag) {
 		this.selectFlag = selectFlag;
+	}
+
+	public int getSubjectInfo() {
+		return subjectInfo;
+	}
+
+	public void setSubjectInfo(int subjectInfo) {
+		this.subjectInfo = subjectInfo;
+	}
+
+	public String getIdList() {
+		return idList;
+	}
+
+	public void setIdList(String idList) {
+		this.idList = idList;
 	}
 }

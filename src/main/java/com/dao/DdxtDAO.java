@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.model.Ddxt;
 
+import javax.persistence.criteria.CriteriaBuilder;
+
 public class DdxtDAO  extends HibernateDaoSupport {
 	private static final Log log = LogFactory.getLog(DdxtDAO.class);
 	
@@ -45,21 +47,21 @@ public class DdxtDAO  extends HibernateDaoSupport {
 		}
 	}
 	
-	public List findAll() {
-		log.debug("finding all Ddxt instances");
-		try {
-			String queryString = " from Ddxt";
-			return getHibernateTemplate().find(queryString);
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
-	}
+//	public List findAll() {
+//		log.debug("finding all Ddxt instances");
+//		try {
+//			String queryString = " from Ddxt";
+//			return getHibernateTemplate().find(queryString);
+//		} catch (RuntimeException re) {
+//			log.error("find all failed", re);
+//			throw re;
+//		}
+//	}
 	
-	public List findAll(int tid) {
+	public List findAll(Integer tid) {
 		log.debug("finding all Bc instances");
 		try {
-			String queryString = " from Ddxt as model where model.teaid="+tid;
+			String queryString = " from Ddxt as model where model.subjectInfo="+tid;
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
