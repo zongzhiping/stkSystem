@@ -110,7 +110,7 @@
             if (count == 1) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/dxtMb.action?id=" + j;
+                    action = "<%=path %>/dxtMb.action?id=" + j+"&subjectInfo=${subjectInfo}";
                     submit();
                 }
             }

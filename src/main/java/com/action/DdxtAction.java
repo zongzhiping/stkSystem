@@ -81,7 +81,7 @@ public class DdxtAction extends ActionSupport {
 		demo.setSubjectInfo(subjectInfo);
 		dao.merge(demo);
 		this.setMessage("ÐÞ¸Ä³É¹¦");
-		this.setPath("ddxtList.action");
+		this.setPath("ddxtList.action?subjectInfo="+subjectInfo);
 		return "succeed";
 	}
 

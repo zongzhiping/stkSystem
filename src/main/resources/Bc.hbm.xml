@@ -13,5 +13,8 @@
          <property name="da" type="java.lang.String">
             <column name="da" length="50" />
         </property>
+        <property name="subjectInfo" type="java.lang.Integer">
+            <column name="subject_info"></column>
+        </property>
     </class>
 </hibernate-mapping>

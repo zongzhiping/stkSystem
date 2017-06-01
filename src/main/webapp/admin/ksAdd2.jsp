@@ -103,7 +103,7 @@ method=post>
                 </TR>
                 <TR 
               style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                <TD align="center">编程题</TD>
+                <TD align="center">填空题</TD>
                 <TD>数量<input type="text" id="bcsl" name="bcsl"/>每题分值<input type="text" id="bcfz" name="bcfz"/></TD>
                 </TR>
 

@@ -43,7 +43,7 @@
 </script>
 
 <form id="ThisForm" name="ThisForm"
-      action="<%=path %>/bcAdd.action"
+      action="<%=path %>/bcAdd.action?subjectInfo=${subjectInfo}"
       method=post>
     <table cellSpacing=0 cellPadding=0 width="98%" border=0>
         <tbody>

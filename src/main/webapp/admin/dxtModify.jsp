@@ -4,7 +4,6 @@
 <%
     String path = request.getContextPath();
     Dxt bean = (Dxt) request.getAttribute("bean");
-
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
@@ -23,7 +22,7 @@
 </HEAD>
 <BODY>
 <FORM id=ThisForm name=ThisForm
-      action="<%=path %>/dxtModify.action"
+      action="<%=path %>/dxtModify.action?subjectInfo=${subjectInfo}"
       method=post>
     <input type="hidden" id="id" name="id" value="<%=bean.getId()%>">
     <SCRIPT type=text/javascript>

@@ -56,10 +56,10 @@ public class PdDAO  extends HibernateDaoSupport {
 		}
 	}
 	
-	public List findAll(int tid) {
+	public List findAll(Integer tid) {
 		log.debug("finding all Bc instances");
 		try {
-			String queryString = " from Pd as model where model.teaid="+tid;
+			String queryString = " from Pd as model where model.subjectInfo="+tid;
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);

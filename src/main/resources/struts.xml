@@ -94,12 +94,10 @@
          <!-- 多选题删除 -->
         <action name="ddxtDel" class="ddxtAction" method="delete">
         </action>
-        
          <!-- 多选题修改前 -->
         <action name="ddxtMb" class="ddxtAction" method="modifybefore">
           <result name="mb">/admin/ddxtModify.jsp</result>
         </action>
-        
         <!-- 多选题修改 -->
         <action name="ddxtModify" class="ddxtAction" method="modify">
         </action>
@@ -119,12 +117,10 @@
          <!-- 判断题删除 -->
         <action name="pdDel" class="pdAction" method="delete">
         </action>
-        
          <!-- 判断题修改前 -->
         <action name="pdMb" class="pdAction" method="modifybefore">
           <result name="mb">/admin/pdModify.jsp</result>
         </action>
-        
         <!-- 判断题修改 -->
         <action name="pdModify" class="pdAction" method="modify">
         </action>
