@@ -61,21 +61,17 @@
         <action name="dxtList" class="dxtAction" method="all">
           <result name="list">/admin/dxtList.jsp</result>
         </action>
-        
          <!-- 随机单选题列表 -->
         <action name="szddxtList" class="dxtAction" method="szddxtList">
           <result name="list">/admin/szddxtList.jsp</result>
         </action>
-        
          <!-- 单选题删除 -->
         <action name="dxtDel" class="dxtAction" method="delete">
         </action>
-        
          <!-- 单选题修改前 -->
         <action name="dxtMb" class="dxtAction" method="modifybefore">
           <result name="mb">/admin/dxtModify.jsp</result>
         </action>
-        
         <!-- 单选题修改 -->
         <action name="dxtModify" class="dxtAction" method="modify">
         </action>
@@ -127,33 +123,33 @@
         
         
         
-           <!-- 编程题添加 -->
+           <!-- 填空题添加 -->
         <action name="bcAdd" class="bcAction" method="add">
         </action>
-         <!-- 编程题列表 -->
+         <!-- 填空题列表 -->
         <action name="bcList" class="bcAction" method="all">
           <result name="list">/admin/bcList.jsp</result>
         </action>
-         <!-- 随机编程题列表 -->
+         <!-- 随机填空题列表 -->
         <action name="szdbcList" class="bcAction" method="szdbcList">
           <result name="list">/admin/szdbcList.jsp</result>
         </action>
-         <!-- 编程题删除 -->
+         <!-- 填空题删除 -->
         <action name="bcDel" class="bcAction" method="delete">
         </action>
         
-         <!-- 编程题修改前 -->
+         <!-- 填空题修改前 -->
         <action name="bcMb" class="bcAction" method="modifybefore">
           <result name="mb">/admin/bcModify.jsp</result>
         </action>
         
-        <!-- 编程题修改 -->
+        <!-- 填空题修改 -->
         <action name="bcModify" class="bcAction" method="modify">
         </action>
         
         
         
-         <!-- 用户添加 -->
+         <!-- 学生添加 -->
         <action name="stuAdd" class="stuAction" method="add">
         </action>
          <!--学生列表 -->
@@ -178,20 +174,15 @@
         </action>
         
           <!-- 考试题添加 -->
-        <action name="kstAdd" class="kstAction" method="add">
-        </action>
-        
+        <!--<action name="kstAdd" class="kstAction" method="add">-->
+        <!--</action>-->
         <!-- 考试题列表 -->
-        <action name="kstList" class="kstAction" method="all">
-          <result name="list">/admin/kst.jsp</result>
-        </action>
-        
+        <!--<action name="kstList" class="kstAction" method="all">-->
+          <!--<result name="list">/admin/kst.jsp</result>-->
+        <!--</action>-->
            <!-- 考试添加 -->
-        <action name="ksAdd" class="ksAction" method="add">
-        </action>
-        
-           <!-- 考试添加 -->
-        <action name="ksAdd2" class="ksAction" method="add2">
+        <action name="ksAdd" class="ksAction" method="add2">
+            <result name="list">ksList.action</result>
         </action>
         
          <!-- 考试列表 -->
@@ -201,7 +192,6 @@
           <result name="zdyjlist">/admin/zdyjList.jsp</result>
            <result name="bzdyjlist">/admin/bzdyjList.jsp</result>
            <result name="cjcxlist">/admin/cjcxList.jsp</result>
-           
         </action>
         
           <!-- 考试删除 -->

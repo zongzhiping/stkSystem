@@ -89,7 +89,7 @@ A.active {
 		if (type == 1) {
 			index = 3;
 		} else if (type == 2) {
-			index = 4;
+			index = 2;
 		} else if (type == 3) {
 			index = 2;
 		}
@@ -158,10 +158,10 @@ A.active {
 													</TD>
 												</TR>
 												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
+													<td class=menuSmall><img src="<%=path%>/images/a.gif"><A
 														class=style2 href='<%=path%>/stuList.action'
 														target=dmMain>学生管理</A>
-													</TD>
+													</td>
 												</TR>
 												<TR>
 													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
@@ -330,75 +330,75 @@ A.active {
 														target=dmMain>自动试卷管理</A>
 													</TD>
 												</TR>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/admin/ksAdd.jsp?type=2'
-														target=dmMain>手动制定试卷</A>
-													</TD>
-												</TR>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ksList.action?type=2'
-														target=dmMain>手动试卷管理</A>
-													</TD>
-												</TR>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/admin/ksAdd.jsp?type=2'--%>
+														<%--target=dmMain>手动制定试卷</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/ksList.action?type=2'--%>
+														<%--target=dmMain>手动试卷管理</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
 											</TBODY>
 										</TABLE>
 									</TD>
 								</TR>
 
-								<TR>
-									<TD class=mainMenu onClick="MenuDisplay('table_3');"><SPAN
-										class=span id=table_3Span><img
-											src="<%=path%>/images/311.gif">
-									</SPAN> 阅卷</TD>
-								</TR>
-								<TR>
-									<TD>
-										<TABLE id=table_3 style="DISPLAY: none" cellSpacing=0
-											cellPadding=2 width=155 align=center border=0>
-											<TBODY>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ksList.action?type=6'
-														target=dmMain>自动阅卷</A>
-													</TD>
-												</TR>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ksList.action?type=7'
-														target=dmMain>半自动阅卷</A>
-													</TD>
-												</TR>
-											</TBODY>
-										</TABLE>
-									</TD>
-								</TR>
+								<%--<TR>--%>
+									<%--<TD class=mainMenu onClick="MenuDisplay('table_3');"><SPAN--%>
+										<%--class=span id=table_3Span><img--%>
+											<%--src="<%=path%>/images/311.gif">--%>
+									<%--</SPAN> 阅卷</TD>--%>
+								<%--</TR>--%>
+								<%--<TR>--%>
+									<%--<TD>--%>
+										<%--<TABLE id=table_3 style="DISPLAY: none" cellSpacing=0--%>
+											<%--cellPadding=2 width=155 align=center border=0>--%>
+											<%--<TBODY>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/ksList.action?type=6'--%>
+														<%--target=dmMain>自动阅卷</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/ksList.action?type=7'--%>
+														<%--target=dmMain>半自动阅卷</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+											<%--</TBODY>--%>
+										<%--</TABLE>--%>
+									<%--</TD>--%>
+								<%--</TR>--%>
 
 
 
 
-								<TR>
-									<TD class=mainMenu onClick="MenuDisplay('table_4');"><SPAN
-										class=span id=table_Span><img
-											src="<%=path%>/images/311.gif">
-									</SPAN> 统计功能</TD>
-								</TR>
-								<TR>
-									<TD>
-										<TABLE id=table_4 style="DISPLAY: none" cellSpacing=0
-											cellPadding=2 width=155 align=center border=0>
-											<TBODY>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ksList.action?type=8'
-														target=dmMain>统计查询</A>
-													</TD>
-												</TR>
-											</TBODY>
-										</TABLE>
-									</TD>
-								</TR>
+								<%--<TR>--%>
+									<%--<TD class=mainMenu onClick="MenuDisplay('table_4');"><SPAN--%>
+										<%--class=span id=table_Span><img--%>
+											<%--src="<%=path%>/images/311.gif">--%>
+									<%--</SPAN> 统计功能</TD>--%>
+								<%--</TR>--%>
+								<%--<TR>--%>
+									<%--<TD>--%>
+										<%--<TABLE id=table_4 style="DISPLAY: none" cellSpacing=0--%>
+											<%--cellPadding=2 width=155 align=center border=0>--%>
+											<%--<TBODY>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/ksList.action?type=8'--%>
+														<%--target=dmMain>统计查询</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+											<%--</TBODY>--%>
+										<%--</TABLE>--%>
+									<%--</TD>--%>
+								<%--</TR>--%>
 
 								<%
 									} else {

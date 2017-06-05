@@ -10,19 +10,19 @@ import com.model.Ks;
 
 public class KsDAO  extends HibernateDaoSupport {
 	private static final Log log = LogFactory.getLog(KsDAO.class);
-	
+
 	public Ks save(Ks transientInstance) {
 		log.debug("saving Ks instance");
 		try {
 			getHibernateTemplate().save(transientInstance);
-			getHibernateTemplate().flush();  
+			getHibernateTemplate().flush();
 			return transientInstance;
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
 			throw re;
 		}
 	}
-	
+
 	public void delete(Ks persistentInstance) {
 		log.debug("deleting Ks instance");
 		try {
@@ -33,8 +33,8 @@ public class KsDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
-	public Ks findById(Integer id) {
+
+	public Ks findById(java.lang.Integer id) {
 		log.debug("getting Ks instance with id: " + id);
 		try {
 			Ks instance = (Ks) getHibernateTemplate().get(
@@ -45,20 +45,20 @@ public class KsDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
+
 	public List findAll(int type) {
 		log.debug("finding all Ks instances");
 		try {
 			String queryString = "";
-			if(type==1){//�������
+			if(type==1){//随机命题
 				queryString = " from Ks as model where model.type=1 and model.state=0 ";
-			}else if(type==2){//��������
+			}else if(type==2){//自主命题
 				queryString = " from Ks as model where model.type=2 and model.state=0 ";
-			}else if(type==6){//�Զ��ľ�
+			}else if(type==6){//自动阅卷
 				queryString = " from Ks as model where  model.state=0 ";
-			}else if(type==7){//�˹��ľ�
+			}else if(type==7){//人工阅卷
 				queryString = " from Ks as model where  model.state=1 ";
-			}else if(type==8){//�ɼ���ѯ
+			}else if(type==8){//成绩查询
 				queryString = " from Ks as model where  1=1 ";
 			}else{
 				queryString = " from Ks as model where 1=1 ";
@@ -69,9 +69,9 @@ public class KsDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
-	
-	
+
+
+
 	public Ks merge(Ks detachedInstance) {
 		log.debug("merging Ks instance");
 		try {
@@ -84,7 +84,7 @@ public class KsDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
+
 	public List findByProperty(String propertyName, Object value) {
 		log.debug("finding Ks instance with property: " + propertyName
 				+ ", value: " + value);
@@ -97,22 +97,22 @@ public class KsDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
+
 	public List findByProperty2(String propertyName, Object value, Object value2) {
 		log.debug("finding Ks instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
 			String queryString = "from Tm as model where model.kid="+value+" and model.stuid="+value2;
-				
+
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
 		}
 	}
-	
+
 	public static KsDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (KsDAO) ctx.getBean("KsDAO");
 	}
-	
+
 }

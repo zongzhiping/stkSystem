@@ -109,7 +109,7 @@
 	</bean>
 	<!-- 判断题结束 -->
 	
-	<!-- 编程题开始 -->
+	<!-- 填空题开始 -->
 	<bean id="bcAction" class="com.action.BcAction" scope="prototype">
 		 <property name="dao">
 			<ref bean="bcDAO" />
@@ -121,7 +121,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<!-- 编程题结束 -->
+	<!-- 填空题结束 -->
 	
 	<!-- 学生开始 -->
 	<bean id="stuAction" class="com.action.StuAction" scope="prototype">

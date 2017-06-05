@@ -1,5 +1,6 @@
 package com.action;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,7 @@ public class KsAction extends ActionSupport {
 	private String message;
 	private String path;
 	private KsDAO dao;
+	private Integer subjectInfo;
 
 	private KstDAO kstdao;
 	private DxtDAO dxtdao;
@@ -53,7 +55,6 @@ public class KsAction extends ActionSupport {
 
 	public String add() {
 		Ks demo = new Ks();
-		// demo.setName(this.getName());
 		demo.setTitle(title);
 		demo.setTimes(times);
 		demo.setDx(0);
@@ -68,7 +69,7 @@ public class KsAction extends ActionSupport {
 		return "succeed";
 	}
 
-	public String add2(Integer subjectInfo) {
+	public String add2() {
 
 		int totle = 0;
 		if (dxtsl != null && dxtfz != null && !dxtfz.equals("")
@@ -461,4 +462,11 @@ public class KsAction extends ActionSupport {
 		this.bcdao = bcdao;
 	}
 
+	public Integer getSubjectInfo() {
+		return subjectInfo;
+	}
+
+	public void setSubjectInfo(Integer subjectInfo) {
+		this.subjectInfo = subjectInfo;
+	}
 }
