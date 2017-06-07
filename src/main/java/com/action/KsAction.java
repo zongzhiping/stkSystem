@@ -148,7 +148,7 @@ public class KsAction extends ActionSupport {
 					Kst ks = new Kst();
 					ks.setTid(bean.getId());
 					ks.setKid(demo.getId());
-					ks.setType(1);
+					ks.setType(1);//单选题类型为1
 					ks.setFs(Integer.parseInt(dxtfz));
 					kstdao.save(ks);
 				}
@@ -166,7 +166,7 @@ public class KsAction extends ActionSupport {
 					Kst ks = new Kst();
 					ks.setTid(bean.getId());
 					ks.setKid(demo.getId());
-					ks.setType(2);
+					ks.setType(2);//多选题类型为2
 					ks.setFs(Integer.parseInt(ddxtfz));
 					kstdao.save(ks);
 				}
@@ -183,7 +183,7 @@ public class KsAction extends ActionSupport {
 					Kst ks = new Kst();
 					ks.setTid(bean.getId());
 					ks.setKid(demo.getId());
-					ks.setType(3);
+					ks.setType(3);//判断题类型为3
 					ks.setFs(Integer.parseInt(pdfz));
 					kstdao.save(ks);
 				}
@@ -200,7 +200,7 @@ public class KsAction extends ActionSupport {
 					Kst ks = new Kst();
 					ks.setTid(bean.getId());
 					ks.setKid(demo.getId());
-					ks.setType(4);
+					ks.setType(4);//填空题类型为4
 					ks.setFs(Integer.parseInt(bcfz));
 					kstdao.save(ks);
 				}
@@ -229,7 +229,13 @@ public class KsAction extends ActionSupport {
 
 	public String modifybefore() {
 
-		Ks demo = dao.findById(Integer.parseInt(selectFlag[0]));
+		//获得考试ID
+		Integer ksId = Integer.parseInt(selectFlag[0]);
+		Ks demo = dao.findById(ksId);
+
+		//通过考试ID查询kst表中的数据
+
+
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("bean", demo);
 		return "mb";
@@ -260,7 +266,6 @@ public class KsAction extends ActionSupport {
 					list2.add(ks);
 				}
 			}
-			System.out.println("==========================="+str);
 			list = list2;
 			
 		}

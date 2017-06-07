@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bd2d4bb-4b1f-42d9-b380-901e55fa2de7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/staticfile/skin/default/images/login/bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ksModify.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/action/KsAction.java" afterPath="$PROJECT_DIR$/src/main/java/com/action/KsAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dao/KsDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/KsDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/dxtAdd.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/dxtAdd.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/ksAdd.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ksAdd.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/ksAdd2.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ksAdd2.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/kst.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/kst.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/left.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/szddxtList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/szddxtList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/staticfile/skin/default/css/login.css" afterPath="$PROJECT_DIR$/src/main/webapp/staticfile/skin/default/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/sjks.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/sjks.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,165 +20,41 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="199">
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <file leaf-file-name="left.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/left.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5076">
-              <caret line="188" column="60" lean-forward="false" selection-start-line="188" selection-start-column="60" selection-end-line="188" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ksList.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4104">
-              <caret line="152" column="42" lean-forward="false" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sysadmin/login/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="105" lean-forward="false" selection-start-line="5" selection-start-column="105" selection-end-line="5" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/staticfile/skin/default/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KsAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/action/KsAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3834">
-              <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="443" column="57" lean-forward="false" selection-start-line="443" selection-start-column="57" selection-end-line="443" selection-end-column="57" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1496395536014" expanded="true" signature="1539:5153" ph="{...}" />
-                <marker date="1496395536014" expanded="true" signature="5179:5536" ph="{...}" />
-                <marker date="1496395536014" expanded="true" signature="5568:5751" ph="{...}" />
-                <marker date="1496395536014" expanded="true" signature="5777:5935" ph="{...}" />
-                <marker date="1496395536014" expanded="true" signature="5958:6857" ph="{...}" />
-                <marker date="1496395536014" expanded="true" signature="6346:6811" ph="{...}" />
-                <marker date="1496395536014" expanded="true" signature="6860:7054" ph="//..." />
-                <marker date="1496395536014" expanded="true" signature="7080:7259" ph="{...}" />
-                <marker date="1496395536014" expanded="false" signature="7283:7288" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7299:7302" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7334:7339" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7354:7357" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7378:7383" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7393:7396" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7424:7429" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7442:7445" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7474:7479" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7494:7497" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7538:7543" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7566:7569" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7595:7600" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7612:7615" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7650:7655" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7672:7675" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7702:7707" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7720:7723" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7760:7765" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7784:7787" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7814:7819" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7832:7835" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7872:7877" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7896:7899" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="7933:7938" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="7956:7959" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8008:8013" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8042:8045" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8068:8073" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8085:8088" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8120:8125" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8142:8145" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8172:8177" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8190:8193" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8230:8235" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8254:8257" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8285:8290" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8304:8307" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8346:8351" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8372:8375" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8401:8406" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8418:8421" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8456:8461" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8478:8481" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8507:8512" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8524:8527" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8562:8567" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8584:8587" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8614:8619" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8632:8635" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8672:8677" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8696:8699" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8727:8732" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8746:8749" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8788:8793" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8814:8817" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8843:8848" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8860:8863" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8898:8903" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8920:8923" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="8949:8954" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="8966:8969" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9004:9009" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9026:9029" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9057:9062" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9076:9079" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9118:9123" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9144:9147" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9175:9180" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9194:9197" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9236:9241" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9262:9265" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9295:9300" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9315:9318" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9360:9365" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9388:9391" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9417:9422" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9435:9438" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9474:9479" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9498:9501" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9527:9532" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9545:9548" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9584:9589" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9608:9611" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9645:9650" ph=" { " />
-                <marker date="1496395536014" expanded="false" signature="9669:9672" ph=" }" />
-                <marker date="1496395536014" expanded="false" signature="9722:9727" ph=" { " />
+                <marker date="1496391808421" expanded="false" signature="10647:10660" ph="..." />
+                <marker date="1496391808421" expanded="false" signature="11761:11774" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="ksAdd2.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksAdd2.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-297">
+              <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="211" column="46" lean-forward="false" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sjks.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/sjks.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -196,15 +63,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="left.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/left.jsp">
+      <file leaf-file-name="stuksList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/stuksList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8964">
-              <caret line="332" column="48" lean-forward="false" selection-start-line="332" selection-start-column="52" selection-end-line="343" selection-end-column="57" />
+            <state relative-caret-position="478">
+              <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ksModify.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksModify.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KstDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/KstDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
-                <marker date="1496391808421" expanded="false" signature="10647:10660" ph="..." />
-                <marker date="1496391808421" expanded="false" signature="11761:11774" ph="..." />
+                <marker date="1495871610125" expanded="true" signature="3778:3867" ph="select sum(t... tm" />
+                <marker date="1495871610125" expanded="true" signature="4989:5029" ph="select sum(f... kst" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KstAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/action/KstAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="631">
+              <caret line="226" column="23" lean-forward="false" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KsAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/action/KsAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="275" column="27" lean-forward="false" selection-start-line="275" selection-start-column="27" selection-end-line="275" selection-end-column="27" />
+              <folding>
+                <marker date="1496839548370" expanded="true" signature="6440:6847" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KsDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/KsDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -222,7 +141,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ifAll</find>
-      <find>selectFlag</find>
       <find>&lt;TD</find>
       <find>page</find>
       <find>form1</find>
@@ -235,9 +153,17 @@
       <find>编程</find>
       <find>ksadd</find>
       <find>szddxtList</find>
-      <find>all</find>
       <find>ksAdd2</find>
+      <find>自动试卷</find>
+      <find>ValueBean</find>
+      <find>ksAction</find>
+      <find>ksList</find>
+      <find>ksMb</find>
+      <find>selectFlag</find>
       <find>add2</find>
+      <find>all</find>
+      <find>开始考试</find>
+      <find>stuksb</find>
     </findStrings>
     <replaceStrings>
       <replace>tbody</replace>
@@ -256,8 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/dao/LoginDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/admin/teaModify.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/teaList.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/util/Pagination.java" />
@@ -276,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/admin/ddxtAdd.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/Ddxt.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/dxtList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/admin/dxtModify.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/action/DxtAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/action/DdxtAction.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/ddxtList.jsp" />
@@ -303,10 +226,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/ksAdd2.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/action/KsAction.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/staticfile/skin/default/css/login.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/dxtModify.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/ksModify.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/action/KsAction.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/sjks.jsp" />
       </list>
     </option>
   </component>
@@ -345,10 +271,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -366,9 +291,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -378,6 +303,128 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stkSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -919,7 +966,12 @@
       <workItem from="1496367308794" duration="19471000" />
       <workItem from="1496456495391" duration="2513000" />
       <workItem from="1496541478039" duration="752000" />
-      <workItem from="1496623592191" duration="411000" />
+      <workItem from="1496623592191" duration="3651000" />
+      <workItem from="1496632606343" duration="705000" />
+      <workItem from="1496739915334" duration="304000" />
+      <workItem from="1496747594744" duration="2151000" />
+      <workItem from="1496839037576" duration="3474000" />
+      <workItem from="1496842615140" duration="904000" />
     </task>
     <task id="LOCAL-00001" summary="da">
       <created>1495871164535</created>
@@ -963,11 +1015,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496287995238</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="大修改">
+      <created>1496624236505</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1496624236505</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132144000" />
+    <option name="totallyTimeSpent" value="142922000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -979,7 +1038,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -993,17 +1053,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5146886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5136742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36741975" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38895416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38882282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27771798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1011,10 +1072,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3678026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818073" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1055,7 +1115,8 @@
     <MESSAGE value="细节修改！" />
     <MESSAGE value="单选多选" />
     <MESSAGE value="准备生成试卷" />
-    <option name="LAST_COMMIT_MESSAGE" value="准备生成试卷" />
+    <MESSAGE value="大修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="大修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1068,21 +1129,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/action/KsAction.java</url>
-          <line>74</line>
+          <line>253</line>
           <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/action/KsAction.java</url>
-          <line>101</line>
-          <properties />
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="47" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1091,76 +1146,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ddxtList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="110" column="91" lean-forward="false" selection-start-line="110" selection-start-column="91" selection-end-line="110" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ddxtModify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Kst.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Dxt.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Pd.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/pdAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/DdxtDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="63" column="84" lean-forward="false" selection-start-line="63" selection-start-column="84" selection-end-line="63" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/pdModify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/action/DxtAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="61" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/dxtList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2079">
-          <caret line="112" column="46" lean-forward="false" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/action/DdxtAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -1221,7 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1285,13 +1269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/KstDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/szddxtList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4208">
@@ -1310,13 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="52" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/KsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1356,172 +1326,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksAdd2.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4104">
-          <caret line="152" column="42" lean-forward="false" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8964">
-          <caret line="332" column="48" lean-forward="false" selection-start-line="332" selection-start-column="52" selection-end-line="343" selection-end-column="57" />
-          <folding>
-            <marker date="1496391808421" expanded="false" signature="10647:10660" ph="..." />
-            <marker date="1496391808421" expanded="false" signature="11761:11774" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/Ks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.6/ognl-3.0.6-sources.jar!/ognl/OgnlRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="890" column="0" lean-forward="false" selection-start-line="890" selection-start-column="0" selection-end-line="890" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/action/KsAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3834">
-          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1496395536014" expanded="true" signature="1539:5153" ph="{...}" />
-            <marker date="1496395536014" expanded="true" signature="5179:5536" ph="{...}" />
-            <marker date="1496395536014" expanded="true" signature="5568:5751" ph="{...}" />
-            <marker date="1496395536014" expanded="true" signature="5777:5935" ph="{...}" />
-            <marker date="1496395536014" expanded="true" signature="5958:6857" ph="{...}" />
-            <marker date="1496395536014" expanded="true" signature="6346:6811" ph="{...}" />
-            <marker date="1496395536014" expanded="true" signature="6860:7054" ph="//..." />
-            <marker date="1496395536014" expanded="true" signature="7080:7259" ph="{...}" />
-            <marker date="1496395536014" expanded="false" signature="7283:7288" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7299:7302" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7334:7339" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7354:7357" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7378:7383" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7393:7396" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7424:7429" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7442:7445" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7474:7479" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7494:7497" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7538:7543" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7566:7569" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7595:7600" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7612:7615" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7650:7655" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7672:7675" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7702:7707" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7720:7723" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7760:7765" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7784:7787" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7814:7819" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7832:7835" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7872:7877" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7896:7899" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="7933:7938" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="7956:7959" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8008:8013" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8042:8045" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8068:8073" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8085:8088" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8120:8125" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8142:8145" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8172:8177" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8190:8193" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8230:8235" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8254:8257" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8285:8290" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8304:8307" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8346:8351" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8372:8375" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8401:8406" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8418:8421" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8456:8461" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8478:8481" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8507:8512" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8524:8527" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8562:8567" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8584:8587" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8614:8619" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8632:8635" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8672:8677" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8696:8699" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8727:8732" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8746:8749" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8788:8793" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8814:8817" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8843:8848" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8860:8863" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8898:8903" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8920:8923" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="8949:8954" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="8966:8969" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9004:9009" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9026:9029" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9057:9062" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9076:9079" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9118:9123" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9144:9147" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9175:9180" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9194:9197" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9236:9241" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9262:9265" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9295:9300" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9315:9318" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9360:9365" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9388:9391" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9417:9422" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9435:9438" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9474:9479" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9498:9501" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9527:9532" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9545:9548" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9584:9589" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9608:9611" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9645:9650" ph=" { " />
-            <marker date="1496395536014" expanded="false" signature="9669:9672" ph=" }" />
-            <marker date="1496395536014" expanded="false" signature="9722:9727" ph=" { " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5076">
-          <caret line="188" column="60" lean-forward="false" selection-start-line="188" selection-start-column="60" selection-end-line="188" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1529,7 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" column="105" lean-forward="false" selection-start-line="5" selection-start-column="105" selection-end-line="5" selection-end-column="105" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1550,8 +1357,174 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/staticfile/skin/default/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
+        <state relative-caret-position="135">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/dxtList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2484">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="116" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4644">
+          <caret line="172" column="46" lean-forward="false" selection-start-line="172" selection-start-column="46" selection-end-line="172" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/Ks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <caret line="74" column="92" lean-forward="true" selection-start-line="74" selection-start-column="92" selection-end-line="74" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/zdyjList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1701">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/bzdyjList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3453">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/cjcxList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2268">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/Tm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/dxtModify.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksModify.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="443" column="57" lean-forward="false" selection-start-line="443" selection-start-column="57" selection-end-line="443" selection-end-column="57" />
+          <folding>
+            <marker date="1496391808421" expanded="false" signature="10647:10660" ph="..." />
+            <marker date="1496391808421" expanded="false" signature="11761:11774" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/KstDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding>
+            <marker date="1495871610125" expanded="true" signature="3778:3867" ph="select sum(t... tm" />
+            <marker date="1495871610125" expanded="true" signature="4989:5029" ph="select sum(f... kst" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/KsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.6/ognl-3.0.6-sources.jar!/ognl/OgnlRuntime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="890" column="0" lean-forward="false" selection-start-line="890" selection-start-column="0" selection-end-line="890" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ksAdd2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/stuksList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/action/KsAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="275" column="27" lean-forward="false" selection-start-line="275" selection-start-column="27" selection-end-line="275" selection-end-column="27" />
+          <folding>
+            <marker date="1496839548370" expanded="true" signature="6440:6847" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/action/KstAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="226" column="23" lean-forward="false" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="211" column="46" lean-forward="false" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/sjks.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -12,7 +12,7 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
-<HEAD id=Head1><TITLE>模板</TITLE>
+<head id=Head1><TITLE>模板</TITLE>
     <META http-equiv=Content-Type content="text/html; charset=utf-8">
     <LINK
             href="<%=path %>/admin/YHChannelApply.files/Style.css" type=text/css rel=stylesheet>
@@ -24,13 +24,13 @@
 
 
     <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
-</HEAD>
-<BODY>
-<FORM id=form1 name=form1
+</head>
+<body>
+<form id=form1 name=form1
 
       method=post>
     <input type="hidden" id="type" name="type" value="<%=type %>">
-    <SCRIPT type=text/javascript>
+    <script type=text/javascript>
         //<![CDATA[
         var theForm = document.forms['form1'];
         if (!theForm) {
@@ -57,7 +57,7 @@
             var j = 0;
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
                 if (document.getElementsByName("selectFlag")[i].checked) {
-                    j = i;
+                    j = document.getElementsByName("selectFlag")[i].value;
                     count++;
                 }
             }
@@ -72,7 +72,7 @@
             if (count == 1) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/ksMb.action";
+                    action = "<%=path %>/ksMb.action?id=" + j+"&subjectInfo=${subjectInfo}";
                     submit();
                 }
             }
@@ -100,9 +100,9 @@
 
 
         //]]>
-    </SCRIPT>
+    </script>
 
-    <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+    <table cellSpacing=0 cellPadding=0 width="98%" border=0>
         <TBODY>
         <TR>
             <TD width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_019.jpg" border=0></TD>
@@ -111,8 +111,8 @@
                               border=0></TD>
         </TR>
         </TBODY>
-    </TABLE>
-    <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+    </table>
+    <table cellSpacing=0 cellPadding=0 width="98%" border=0>
         <TBODY>
         <TR>
             <TD width=15 background="<%=path %>/admin/YHChannelApply.files/new_022.jpg"><IMG
@@ -133,6 +133,7 @@
                         <TD align=right height=25><INPUT id=boxListValue type=hidden
                                                          name=boxListValue> <INPUT onclick=checkAll(); type=checkbox
                                                                                    name="ifAll"> 全选
+                            <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">修改</span>
                             <span onclick="deletes()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/083.gif">删除</span>
 
                         </TD>
@@ -191,8 +192,8 @@
                     src="<%=path %>/admin/YHChannelApply.files/new_023.jpg" border=0></TD>
         </TR>
         </TBODY>
-    </TABLE>
-    <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+    </table>
+    <table cellSpacing=0 cellPadding=0 width="98%" border=0>
         <TBODY>
         <TR>
             <TD width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_024.jpg" border=0></TD>
@@ -202,9 +203,9 @@
                               border=0></TD>
         </TR>
         </TBODY>
-    </TABLE>
-</FORM>
-</BODY>
+    </table>
+</form>
+</body>
 </HTML>
 
 
