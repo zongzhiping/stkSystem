@@ -31,26 +31,27 @@
       method=post>
     <input type="hidden" id="type" name="type" value="<%=type %>">
     <script type=text/javascript>
-        //<![CDATA[
-        var theForm = document.forms['form1'];
-        if (!theForm) {
-            theForm = document.form1;
-        }
-        function __doPostBack(eventTarget, eventArgument) {
-            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                theForm.__EVENTTARGET.value = eventTarget;
-                theForm.__EVENTARGUMENT.value = eventArgument;
-                theForm.submit();
-            }
-        }
 
-
-        function checkAll() {
+        function checkAll(obj) {
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
-                document.getElementsByName("selectFlag")[i].checked = document.getElementById("ifAll").checked;
+                document.getElementsByName("selectFlag")[i].checked = obj.checked;
             }
         }
 
+        window.onload = function () {
+            var len = document.getElementsByName("selectFlag").length;
+            for (var i = 0; i < len; i++) {
+                document.getElementsByName("selectFlag")[i].onclick = function () {
+                    var flag = true;
+                    for (var j = 0; j < len; j++) {
+                        if (!document.getElementsByName("selectFlag")[j].checked) {
+                            flag = false;
+                        }
+                    }
+                    document.getElementById("allbox").checked = flag;
+                }
+            }
+        }
 
         function modify() {
             var count = 0;
@@ -80,9 +81,14 @@
 
         function deletes() {
             var flag = false;
+            var j = 0;
+            var arrayObj = new Array();
+            var a = 0;//记录所选中的数据
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
                 if (document.getElementsByName("selectFlag")[i].checked) {
                     flag = true;
+                    j = document.getElementsByName("selectFlag")[i].value;//获取id
+                    a = arrayObj.push(j);
                 }
             }
             if (!flag) {
@@ -92,7 +98,7 @@
             if (window.confirm("确认删除吗？")) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/ksDel.action?type=<%=type%>";
+                    action = "<%=path %>/ksDel.action?idList=" + arrayObj;
                     submit();
                 }
             }
@@ -131,7 +137,7 @@
                     <TBODY>
                     <TR>
                         <TD align=right height=25><INPUT id=boxListValue type=hidden
-                                                         name=boxListValue> <INPUT onclick=checkAll(); type=checkbox
+                                                         name=boxListValue> <INPUT onclick=checkAll(this); id="allbox" type=checkbox
                                                                                    name="ifAll"> 全选
                             <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">查看试卷</span>
                             <span onclick="deletes()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/083.gif">删除</span>

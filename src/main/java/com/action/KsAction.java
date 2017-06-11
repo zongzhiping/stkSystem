@@ -23,6 +23,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class KsAction extends ActionSupport {
 
 	private int id;
+	private String idList;
 	private String[] selectFlag;
 	private String title;
 	private String times;
@@ -215,10 +216,13 @@ public class KsAction extends ActionSupport {
 
 	public String delete() {
 
-		System.out.println("================  " + selectFlag.length);
-		for (int i = 0; i < selectFlag.length; i++) {
-			System.out.println("================  " + selectFlag[i]);
-			Ks demo = dao.findById(Integer.parseInt(selectFlag[i]));
+		//前台数据解析
+		String idLists[] = idList.split(",");
+
+		for (String id:idLists
+				) {
+			int ida = Integer.parseInt(id);
+			Ks demo = dao.findById(ida);
 			dao.delete(demo);
 		}
 		this.setMessage("操作成功");
@@ -585,5 +589,13 @@ public class KsAction extends ActionSupport {
 
 	public void setClas(String clas) {
 		this.clas = clas;
+	}
+
+	public String getIdList() {
+		return idList;
+	}
+
+	public void setIdList(String idList) {
+		this.idList = idList;
 	}
 }
