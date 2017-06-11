@@ -11,6 +11,8 @@ public class Ks implements java.io.Serializable{
 	private int bc;
 	private int type;
 	private int state;
+	private String clas;
+
 	public int getState() {
 		return state;
 	}
@@ -65,6 +67,15 @@ public class Ks implements java.io.Serializable{
 	public void setBc(int bc) {
 		this.bc = bc;
 	}
+
+	public String getClas() {
+		return clas;
+	}
+
+	public void setClas(String clas) {
+		this.clas = clas;
+	}
+
 	public Ks() {
 	}
 }

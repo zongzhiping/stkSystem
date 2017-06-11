@@ -87,7 +87,7 @@ A.active {
 		   var index=0;
 		   var type='<%=type%>';
 		if (type == 1) {
-			index = 3;
+			index = 2;
 		} else if (type == 2) {
 			index = 2;
 		} else if (type == 3) {
@@ -173,56 +173,56 @@ A.active {
 										</TABLE>
 									</TD>
 								</TR>
+								<%--<TR>--%>
+									<%--<TD class=mainMenu onClick="MenuDisplay('table_2');"><SPAN--%>
+										<%--class=span id=table_2Span><img--%>
+											<%--src="<%=path%>/images/311.gif">--%>
+									<%--</SPAN> 考试管理</TD>--%>
+								<%--</TR>--%>
+								<%--<TR>--%>
+									<%--<TD>--%>
+										<%--<TABLE id=table_2 style="DISPLAY: none" cellSpacing=0--%>
+											<%--cellPadding=2 width=155 align=center border=0>--%>
+											<%--<TBODY>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/admin/ksAdd2.jsp?type=1'--%>
+														<%--target=dmMain>自动生成试卷</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/ksList.action?type=1'--%>
+														<%--target=dmMain>自动试卷管理</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/admin/ksAdd.jsp?type=2'--%>
+														<%--target=dmMain>手动制定试卷</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+												<%--<TR>--%>
+													<%--<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A--%>
+														<%--class=style2 href='<%=path%>/ksList.action?type=2'--%>
+														<%--target=dmMain>手动试卷管理</A>--%>
+													<%--</TD>--%>
+												<%--</TR>--%>
+											<%--</TBODY>--%>
+										<%--</TABLE>--%>
+									<%--</TD>--%>
+								<%--</TR>--%>
+
+
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_2');"><SPAN
-										class=span id=table_2Span><img
-											src="<%=path%>/images/311.gif">
-									</SPAN> 考试管理</TD>
-								</TR>
-								<TR>
-									<TD>
-										<TABLE id=table_2 style="DISPLAY: none" cellSpacing=0
-											cellPadding=2 width=155 align=center border=0>
-											<TBODY>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/admin/ksAdd2.jsp?type=1'
-														target=dmMain>自动生成试卷</A>
-													</TD>
-												</TR>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ksList.action?type=1'
-														target=dmMain>自动试卷管理</A>
-													</TD>
-												</TR>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/admin/ksAdd.jsp?type=2'
-														target=dmMain>手动制定试卷</A>
-													</TD>
-												</TR>
-												<TR>
-													<TD class=menuSmall><img src="<%=path%>/images/a.gif"><A
-														class=style2 href='<%=path%>/ksList.action?type=2'
-														target=dmMain>手动试卷管理</A>
-													</TD>
-												</TR>
-											</TBODY>
-										</TABLE>
-									</TD>
-								</TR>
-
-
-								<TR>
-									<TD class=mainMenu onClick="MenuDisplay('table_3');"><SPAN
 										class=span id=table_3Span><img
 											src="<%=path%>/images/311.gif">
 									</SPAN> 查询功能</TD>
 								</TR>
 								<TR>
 									<TD>
-										<TABLE id=table_3 style="DISPLAY: none" cellSpacing=0
+										<TABLE id=table_2 style="DISPLAY: none" cellSpacing=0
 											cellPadding=2 width=155 align=center border=0>
 											<TBODY>
 												<TR>

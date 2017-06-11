@@ -32,7 +32,10 @@
          <property name="type" type="java.lang.Integer">
             <column name="type"  />
         </property>
-        
+
+        <property name="clas" type="java.lang.String">
+            <column name="class"></column>
+        </property>
         
     </class>
 </hibernate-mapping>

@@ -66,7 +66,7 @@
                 return;
             }
             if (count > 1) {
-                alert("一次只能修改一个数据！");
+                alert("一次只能查看一张试卷！");
                 return;
             }
             if (count == 1) {
@@ -133,7 +133,7 @@
                         <TD align=right height=25><INPUT id=boxListValue type=hidden
                                                          name=boxListValue> <INPUT onclick=checkAll(); type=checkbox
                                                                                    name="ifAll"> 全选
-                            <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">修改</span>
+                            <span onclick="modify()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/114.gif">查看试卷</span>
                             <span onclick="deletes()"> <img alt="" src="<%=path %>/admin/YHChannelApply.files/083.gif">删除</span>
 
                         </TD>
@@ -144,16 +144,17 @@
                                    style="BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #cccccc; WIDTH: 100%; BORDER-TOP-COLOR: #cccccc; FONT-STYLE: normal; BACKGROUND-COLOR: #cccccc; BORDER-RIGHT-WIDTH: 0px; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #cccccc"
                                    cellSpacing=1 cellPadding=2 rules=all border=0>
                                 <TBODY>
-                                <TR
+                                <tr
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-                                    <TD>标题</TD>
-                                    <TD>考试时间</TD>
-                                    <TD>单选题</TD>
-                                    <TD>多选题</TD>
-                                    <TD>判断题</TD>
-                                    <TD>填空题</TD>
-                                    <TD>操作</TD>
-                                </TR>
+                                    <td>标题</td>
+                                    <td>考试时间</td>
+                                    <td>考试班级</td>
+                                    <td>单选题</td>
+                                    <td>多选题</td>
+                                    <td>判断题</td>
+                                    <td>填空题</td>
+                                    <td>操作</td>
+                                </tr>
                                 <%
                                     for (int i = 0; i < list.size(); i++) {
                                         Ks bean = (Ks) list.get(i);
@@ -165,6 +166,8 @@
                                     <TD><%=bean.getTitle() %>
                                     </TD>
                                     <TD><%=bean.getTimes() %>
+                                    </TD>
+                                    <TD><%=bean.getClas() %>
                                     </TD>
                                     <TD><%=ValueBean.gethave(bean.getDx()) %>
                                     </TD>

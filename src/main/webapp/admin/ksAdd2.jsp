@@ -71,6 +71,12 @@
 
                                 <tr
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
+                                    <td align="center">考试班级</td>
+                                    <td><input type="text" id="clas" name="clas"/></td>
+                                </tr>
+
+                                <tr
+                                        style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
                                     <td align="center">单选题</td>
                                     <td>数量<input type="text" id="dxtsl" name="dxtsl"/>每题分值<input type="text" id="dxtfz"
                                                                                                  name="dxtfz"/></td>

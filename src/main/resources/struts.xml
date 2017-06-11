@@ -200,7 +200,7 @@
         
          <!-- 考试修改前 -->
         <action name="ksMb" class="ksAction" method="modifybefore">
-          <result name="mb">/admin/ksModify.jsp</result>
+          <result name="success">/admin/ksModify.jsp</result>
         </action>
         
         <!-- 考试修改 -->

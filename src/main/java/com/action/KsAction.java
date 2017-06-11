@@ -8,6 +8,7 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.model.*;
 import org.apache.struts2.ServletActionContext;
 
 import com.dao.BcDAO;
@@ -16,12 +17,6 @@ import com.dao.DxtDAO;
 import com.dao.KsDAO;
 import com.dao.KstDAO;
 import com.dao.PdDAO;
-import com.model.Bc;
-import com.model.Ddxt;
-import com.model.Dxt;
-import com.model.Ks;
-import com.model.Kst;
-import com.model.Pd;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -31,6 +26,7 @@ public class KsAction extends ActionSupport {
 	private String[] selectFlag;
 	private String title;
 	private String times;
+	private String clas;
 	private String message;
 	private String path;
 	private KsDAO dao;
@@ -52,6 +48,8 @@ public class KsAction extends ActionSupport {
 	private String ddxtfz;
 	private String pdfz;
 	private String bcfz;
+
+	private static boolean flag = false;
 
 	public String add() {
 		Ks demo = new Ks();
@@ -102,6 +100,7 @@ public class KsAction extends ActionSupport {
 			Ks demo = new Ks();
 			demo.setTitle(title);
 			demo.setTimes(times);
+			demo.setClas(clas);
 			
 			if (dxtsl != null && dxtfz != null && !dxtfz.equals("")
 					&& !dxtsl.equals("")) {
@@ -227,18 +226,123 @@ public class KsAction extends ActionSupport {
 		return "succeed";
 	}
 
-	public String modifybefore() {
+//之前的业务逻辑
+//	public String modifybefore() {
+//
+//		//获得考试ID
+//		Integer ksId = Integer.parseInt(selectFlag[0]);
+//		Ks demo = dao.findById(ksId);
+//
+//		//通过考试ID查询kst表中的数据
+//
+//
+//		HttpServletRequest request = ServletActionContext.getRequest();
+//		request.setAttribute("bean", demo);
+//		return "mb";
+//	}
 
-		//获得考试ID
-		Integer ksId = Integer.parseInt(selectFlag[0]);
-		Ks demo = dao.findById(ksId);
+	//之后修改的业务逻辑
+	public String modifybefore(){
 
-		//通过考试ID查询kst表中的数据
+		ActionContext actionContext = ActionContext.getContext();
+		Map session = actionContext.getSession();
+		int stuid = Integer.parseInt(session.get("id").toString());
+		// Integer.parseInt(selectFlag[0])
+		List list = kstdao.findByProperty("kid", Integer.parseInt(selectFlag[0]));
+		Ks ks1 = dao.findById(Integer.parseInt(selectFlag[0]));
+		int kstype = ks1.getType();
+		for (int i = 0; i < list.size(); i++) {
+			Tm tm = new Tm();
+			Kst bean = (Kst) list.get(i);
+			int tid = bean.getTid();
+			int typ = bean.getType();
+			tm.setFs(bean.getFs());
+			tm.setKid(bean.getKid());
 
+			tm.setStuid(stuid);
+			tm.setTid(tid);
+			tm.setType(typ);
+			if (typ == 1) {
+				Dxt t = dxtdao.findById(tid);
 
+				if (kstype == 1) {
+					Random r = new Random();
+					int temp1 = r.nextInt();
+					if (temp1 % 2 == 0) {
+						tm.setA(t.getB());
+						tm.setB(t.getD());
+						tm.setC(t.getA());
+						tm.setD(t.getC());
+						if (t.getDa().equals("A")) {
+							tm.setDa("C");
+						} else if (t.getDa().equals("B")) {
+							tm.setDa("A");
+						} else if (t.getDa().equals("C")) {
+							tm.setDa("D");
+						} else if (t.getDa().equals("D")) {
+							tm.setDa("B");
+						}
+
+					} else {
+						tm.setA(t.getC());
+						tm.setB(t.getA());
+						tm.setC(t.getD());
+						tm.setD(t.getB());
+						if (t.getDa().equals("A")) {
+							tm.setDa("B");
+						} else if (t.getDa().equals("B")) {
+							tm.setDa("D");
+						} else if (t.getDa().equals("C")) {
+							tm.setDa("A");
+						} else if (t.getDa().equals("D")) {
+							tm.setDa("C");
+						}
+					}
+				} else {
+					tm.setA(t.getA());
+					tm.setB(t.getB());
+					tm.setC(t.getC());
+					tm.setD(t.getD());
+					tm.setDa(t.getDa());
+				}
+				tm.setTitle(t.getTitle());
+			} else if (typ == 2) {
+				Ddxt t = ddxtdao.findById(tid);
+				tm.setA(t.getA());
+				tm.setB(t.getB());
+				tm.setC(t.getC());
+				tm.setD(t.getD());
+				tm.setDa(t.getDa());
+				tm.setTitle(t.getTitle());
+			} else if (typ == 3) {
+				Pd t = pddao.findById(tid);
+				tm.setDa(t.getDa());
+				tm.setTitle(t.getTitle());
+			} else if (typ == 4) {
+				Bc t = bcdao.findById(tid);
+				tm.setTitle(t.getTitle());
+				tm.setDa(t.getDa());
+			}
+
+			if(!flag){
+				// 保存tm
+				kstdao.saveTm(tm);
+			}
+
+		}
+		flag = true;
+		List listdxt = kstdao.findAllTmType(stuid, selectFlag[0], 1);
+		List listddxt = kstdao.findAllTmType(stuid, selectFlag[0], 2);
+		List listpd = kstdao.findAllTmType(stuid, selectFlag[0], 3);
+		List listbc = kstdao.findAllTmType(stuid, selectFlag[0], 4);
+		Ks ks = dao.findById(Integer.parseInt(selectFlag[0]));
 		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("bean", demo);
-		return "mb";
+		request.setAttribute("listdxt", listdxt);
+		request.setAttribute("listddxt", listddxt);
+		request.setAttribute("listpd", listpd);
+		request.setAttribute("listbc", listbc);
+		request.setAttribute("bean", ks);
+		return "success";
 	}
 
 	public String modify() {
@@ -473,5 +577,13 @@ public class KsAction extends ActionSupport {
 
 	public void setSubjectInfo(Integer subjectInfo) {
 		this.subjectInfo = subjectInfo;
+	}
+
+	public String getClas() {
+		return clas;
+	}
+
+	public void setClas(String clas) {
+		this.clas = clas;
 	}
 }
