@@ -13,7 +13,7 @@ body {
 
 #png {
     background: url(../images/login/bg.jpg) no-repeat;
-    height: 720px;
+    height: 1080px;
     background-position: center;
 }
 
@@ -61,7 +61,7 @@ body {
     height: 45px;
 }
 
-.loginImgOut {
+#aaa {
     width: 96px;
     height: 45px;
     padding-top: 18px;
@@ -70,7 +70,7 @@ body {
     cursor: pointer;
 }
 
-.loginImgOver {
+#aaa {
     width: 96px;
     height: 45px;
     padding-top: 18px;
@@ -79,7 +79,7 @@ body {
     cursor: pointer;
 }
 
-.resetImgOut {
+#bbb {
     width: 96px;
     height: 45px;
     padding-top: 18px;
@@ -88,7 +88,7 @@ body {
     cursor: pointer;
 }
 
-.resetImgOver {
+#bbb {
     width: 96px;
     height: 45px;
     padding-top: 18px;

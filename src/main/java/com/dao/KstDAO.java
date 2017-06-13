@@ -43,7 +43,19 @@ public class KstDAO  extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-	
+
+
+	public void deleteTm(Tm transientInstance) {
+		log.debug("deleteing Tm instance");
+		try {
+			getHibernateTemplate().delete(transientInstance);
+			log.debug("save successful");
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
+
 	public void saveStuKs(StuKs transientInstance) {
 		log.debug("saving Tm instance");
 		try {

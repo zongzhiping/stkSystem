@@ -43,7 +43,7 @@ public class ValueBean {
 		}else if(type==3){
 			result="判断题";
 		}else if(type==4){
-			result="编程题";
+			result="填空题";
 		}
 		return result;
 	}

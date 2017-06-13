@@ -1,5 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@page import="java.util.*" %>
+<%@page import="com.enumtype.*" %>
 <%@page import="com.model.*" %>
 <%
     String path = request.getContextPath();
@@ -11,24 +13,21 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
-<HEAD id=Head1><TITLE>模板</TITLE>
+<head id=Head1><TITLE>模板</TITLE>
     <META http-equiv=Content-Type content="text/html; charset=utf-8">
-    <LINK
+    <link
             href="<%=path %>/admin/YHChannelApply.files/Style.css" type=text/css rel=stylesheet>
-    <LINK
+    <link
             href="<%=path %>/admin/YHChannelApply.files/Manage.css" type=text/css rel=stylesheet>
-    <SCRIPT language=javascript src="<%=path %>/admin/YHChannelApply.files/FrameDiv.js"></SCRIPT>
-
-    <SCRIPT language=javascript src="<%=path %>/admin/YHChannelApply.files/Common.js"></SCRIPT>
 
 
-    <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
-</HEAD>
+    <meta content="MSHTML 6.00.2900.3492" name=GENERATOR>
+</head>
 <BODY>
-<FORM id=form1 name=form1
+<form id=form1 name=form1
 
       method=post>
-    <SCRIPT type=text/javascript>
+    <script type=text/javascript>
         //<![CDATA[
         var theForm = document.forms['form1'];
         if (!theForm) {
@@ -48,15 +47,15 @@
                 document.getElementsByName("selectFlag")[i].checked = obj.checked;
             }
         }
-        
+
         window.onload = function () {
             var itmes = document.getElementsByName("selectFlag");
             var len = itmes.length;
-            for(var i = 0 ; i < len ; i++){
+            for (var i = 0; i < len; i++) {
                 itmes[i].onclick = function () {
                     var flag = true;
-                    for(var j = 0 ; j < len ; j++){
-                        if(!document.getElementsByName("selectFlag")[j].checked){
+                    for (var j = 0; j < len; j++) {
+                        if (!document.getElementsByName("selectFlag")[j].checked) {
                             flag = false;
                         }
                     }
@@ -92,38 +91,64 @@
         }
 
         <!--编辑-->
-        function edit(){
+        function edit() {
 
             var len = 0;
-            var j = 0 ;
-            for(var i = 0 ; i < document.getElementsByName("selectFlag").length;i++){
-                if(document.getElementsByName("selectFlag")[i].checked){
+            var j = 0;
+            for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
+                if (document.getElementsByName("selectFlag")[i].checked) {
                     j = document.getElementsByName("selectFlag")[i].value;
                     len++;
                 }
             }
 
 
-            if(len>1){
+            if (len > 1) {
                 alert("每次只能编辑一名教师！");
-            }else if(len=0){
+            } else if (len = 0) {
                 alert("请选择要编辑的数据！");
-            }else if(len=1){
+            } else if (len = 1) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/teaMb.action?id="+j;
+                    action = "<%=path %>/teaMb.action?id=" + j;
                     submit();
                 }
-            }else{
+            } else {
                 alert("数据被篡改！")
             }
         }
 
+        <%--function deletes() {--%>
+            <%--var flag = false;--%>
+            <%--for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {--%>
+                <%--if (document.getElementsByName("selectFlag")[i].checked) {--%>
+                    <%--flag = true;--%>
+                <%--}--%>
+            <%--}--%>
+            <%--if (!flag) {--%>
+                <%--alert("请选择需要删除的数据！");--%>
+                <%--return;--%>
+            <%--}--%>
+            <%--if (window.confirm("确认删除吗？")) {--%>
+                <%--with (document.getElementById("form1")) {--%>
+                    <%--method = "post";--%>
+                    <%--action = "<%=path %>/teaDel.action";--%>
+                    <%--submit();--%>
+                <%--}--%>
+            <%--}--%>
+        <%--}--%>
+
+
         function deletes() {
             var flag = false;
+            var j = 0;
+            var arrayObj = new Array();
+            var a = 0;//记录所选中的数据
             for (var i = 0; i < document.getElementsByName("selectFlag").length; i++) {
                 if (document.getElementsByName("selectFlag")[i].checked) {
                     flag = true;
+                    j = document.getElementsByName("selectFlag")[i].value;//获取id
+                    a = arrayObj.push(j);
                 }
             }
             if (!flag) {
@@ -133,32 +158,31 @@
             if (window.confirm("确认删除吗？")) {
                 with (document.getElementById("form1")) {
                     method = "post";
-                    action = "<%=path %>/teaDel.action";
+                    action = "<%=path %>/teaDel.action?idList=" + arrayObj;
                     submit();
                 }
             }
         }
 
-
         //]]>
-    </SCRIPT>
+    </script>
 
-    <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
-        <TBODY>
-        <TR>
-            <TD width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_019.jpg" border=0></TD>
-            <TD width="100%" background="<%=path %>/admin/YHChannelApply.files/new_020.jpg" height=20></TD>
-            <TD width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_021.jpg"
-                              border=0></TD>
-        </TR>
-        </TBODY>
-    </TABLE>
-    <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
-        <TBODY>
-        <TR>
+    <table cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <tbody>
+        <tr>
+            <td width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_019.jpg" border=0></td>
+            <td width="100%" background="<%=path %>/admin/YHChannelApply.files/new_020.jpg" height=20></td>
+            <td width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_021.jpg"
+                              border=0></td>
+        </tr>
+        </tbody>
+    </table>
+    <table cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <tbody>
+        <tr>
             <TD width=15 background="<%=path %>/admin/YHChannelApply.files/new_022.jpg"><IMG
                     src="<%=path %>/admin/YHChannelApply.files/new_022.jpg" border=0></TD>
-            <TD vAlign=top width="100%" bgColor=#ffffff>
+            <td vAlign=top width="100%" bgColor=#ffffff>
                 <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
                     <TR>
                         <TD class=manageHead>当前位置：管理首页 &gt; 教师管理 &gt; 教师管理</TD>
@@ -167,77 +191,79 @@
                         <TD height=2></TD>
                     </TR>
                 </TABLE>
-                <TABLE borderColor=#cccccc cellSpacing=0 cellPadding=0 width="100%"
+                <table borderColor=#cccccc cellSpacing=0 cellPadding=0 width="100%"
                        align=center border=0>
-                    <TBODY>
+                    <tbody>
 
-                    <TR>
-                        <TD>
-                            <TABLE id=grid
+                    <tr>
+                        <td>
+                            <table id=grid
                                    style="BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #cccccc; WIDTH: 100%; BORDER-TOP-COLOR: #cccccc; FONT-STYLE: normal; BACKGROUND-COLOR: #cccccc; BORDER-RIGHT-WIDTH: 0px; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #cccccc"
                                    cellSpacing=1 cellPadding=2 rules=all border=0>
-                                <TBODY>
+                                <tbody>
                                 <TR
                                         style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
 
                                     <TD>账户</TD>
                                     <TD>密码</TD>
-                                    <TD><INPUT onclick="checkAll(this)"; type=checkbox id="ifAll">
+                                    <TD>所教科目</TD>
+                                    <TD><INPUT onclick="checkAll(this)" ; type=checkbox id="ifAll">
                                     </TD>
 
                                 </TR>
                                 <%
-                                    for (int i = 0; i < list.size(); i++) {
-                                        Teacher bean = (Teacher) list.get(i);
+                                for (int i = 0; i < list.size(); i++) {
+                                Teacher bean = (Teacher) list.get(i);
                                 %>
 
+                                <%--<c:forEach items="${list}" var="bean">--%>
 
-                                <TR
-                                        style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-                                    <TD><%=bean.getUserName() %>
-                                    </TD>
-                                    <TD><%=bean.getPassword() %>
-                                    </TD>
-                                    <TD>
-                                        <INPUT id="selectFlag"
-                                               type="checkbox" name="selectFlag" value="<%=bean.getId()%>" onclick="checkOne()">
-                                    </TD>
-                                </TR>
-                                <tr/>
+                                    <tr
+                                            style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
+                                        <td><%= bean.getUserName()%></td>
+                                        <td><%= bean.getPassword()%></td>
+                                        <td><%=SubjectType.get(bean.getSubjectInfo())%></td>
+                                        <td>
+                                            <input id="selectFlag"
+                                                   type="checkbox" name="selectFlag" value="<%=bean.getId()%>"
+                                                   onclick="checkOne()">
+                                        </td>
+                                    </tr>
+                                <%--</c:forEach>--%>
                                 <%} %>
 
-                                </TBODY>
-                            </TABLE>
-                        </TD>
-                    </TR>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
 
-                    <TR  bgcolor="#a9a9a9">
-                        <TD align=center height=25><INPUT id=boxListValue type=hidden
-                                                         name=boxListValue>
-                            <INPUT class=button id=button1 value="编辑" name=button1 onclick="edit()">
-                            <INPUT class=button id=button2 value="删除" name=button2 onclick="deletes()">
-                        </TD>
-                    </TR>
-                    </TBODY>
-                </TABLE>
-            </TD>
-            <TD width=15 background="<%=path %>/admin/YHChannelApply.files/new_023.jpg"><IMG
-                    src="<%=path %>/admin/YHChannelApply.files/new_023.jpg" border=0></TD>
-        </TR>
-        </TBODY>
-    </TABLE>
-    <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
-        <TBODY>
-        <TR>
-            <TD width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_024.jpg" border=0></TD>
-            <TD align=middle width="100%" background="<%=path %>/admin/YHChannelApply.files/new_025.jpg"
-                height=15></TD>
-            <TD width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_026.jpg"
-                              border=0></TD>
-        </TR>
-        </TBODY>
-    </TABLE>
-</FORM>
+                    <tr bgcolor="#a9a9a9">
+                        <td align=center height=25><input id=boxListValue type=hidden
+                                                          name=boxListValue>
+                            <input class=button id=button1 value="编辑" name=button1 onclick="edit()">
+                            <input class=button id=button2 value="删除" name=button2 onclick="deletes()">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td width=15 background="<%=path %>/admin/YHChannelApply.files/new_023.jpg"><IMG
+                    src="<%=path %>/admin/YHChannelApply.files/new_023.jpg" border=0></td>
+        </tr>
+        </tbody>
+    </table>
+    <table cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <tbody>
+        <tr>
+            <td width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_024.jpg" border=0></td>
+            <td align=middle width="100%" background="<%=path %>/admin/YHChannelApply.files/new_025.jpg"
+                height=15></td>
+            <td width=15><IMG src="<%=path %>/admin/YHChannelApply.files/new_026.jpg"
+                              border=0></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
 </BODY>
 </HTML>
 

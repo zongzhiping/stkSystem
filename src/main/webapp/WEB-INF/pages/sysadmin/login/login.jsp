@@ -4,8 +4,6 @@
 <head>
 <title>在线试题库系统</title>
 	<link rel="stylesheet" rev="stylesheet" type="text/css" href="${ctx}/staticfile/skin/default/css/login.css" media="all" />
-	<script src="${ctx}/staticfile/components/pngfix/DD_belatedPNG.js"></script>
-	<script> DD_belatedPNG.fix('*'); </script>
 </head>
 
 <body>
@@ -23,17 +21,20 @@
 					<input type="password" name="password" id="password" onfocus="$('#ts').css('display','none');this.select();"
 						onKeyDown="javascript:if(event.keyCode==13){ submitFind(); }" title="请您输入密码"/>
 				</div>
+				<div class="btnstyle">
+					<input id="aaa" value="" type="button"
+							onclick="formSubmit('${ctx}/adminLogin.action','_self');"
+							<%--onmouseover="this.className='loginImgOver'"--%>
+							<%--onmouseout="this.className='loginImgOut'"--%>
+					/>
+					<input id="bbb" value="" type="button"
+						   onclick="Res()"
+						   <%--onmouseover="this.className='resetImgOver'"--%>
+						   <%--onmouseout="this.className='resetImgOut'"--%>
+					/>
+				</div>
 			</div>
-			<div class="btnstyle">
-				<input  class="loginImgOut" value="" type="button" onclick="formSubmit('${ctx}/adminLogin.action','_self');"
-				  onmouseover="this.className='loginImgOver'" 
-				  onmouseout="this.className='loginImgOut'"
-				/>
-				<input class="resetImgOut" value="" type="button"   
-				  onmouseover="this.className='resetImgOver'" 
-				  onmouseout="this.className='resetImgOut'"
-				/>
-			</div>
+
 		  	<div class="msgtip">
 				<c:if test="${!empty errorInfo}">
 					${errorInfo}
@@ -44,7 +45,9 @@
 </form>
 
 <script type="text/JavaScript">
-	document.getElementById('login_main').userName.focus();
+	function Res() {
+		document.getElementById('login_main').reset();
+    }
 </script>
 
 </body>

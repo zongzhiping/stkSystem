@@ -23,6 +23,7 @@ public class LoginAction extends ActionSupport {
     private int subjectInfo;
     private String message;
     private String path;
+    private String idList;
 
     public String getMessage() {
         return message;
@@ -60,7 +61,7 @@ public class LoginAction extends ActionSupport {
                 if (list3.size() == 0) {// 没有用户
 
                     this.setMessage("用户不存在");
-                    this.setPath("login.jsp");
+                    this.setPath("toLogin.action");
                     return "succeed";
                 } else {
                     result = "yes";
@@ -159,6 +160,7 @@ public class LoginAction extends ActionSupport {
         Teacher demo = new Teacher();
         demo.setUserName(username);
         demo.setPassword(password);
+        demo.setSubjectInfo(subjectInfo);
         dao.save(demo);
         this.setMessage("添加成功");
         this.setPath("admin/teaAdd.jsp");
@@ -167,10 +169,21 @@ public class LoginAction extends ActionSupport {
 
     public String delete() {
 
-        System.out.println("================  " + selectFlag.length);
-        for (int i = 0; i < selectFlag.length; i++) {
-            System.out.println("================  " + selectFlag[i]);
-            Teacher demo = dao.findById(Integer.parseInt(selectFlag[i]));
+//        for (int i = 0; i < selectFlag.length; i++) {
+//            Teacher demo = dao.findById(Integer.parseInt(selectFlag[i]));
+//            dao.delete(demo);
+//        }
+//        this.setMessage("操作成功");
+//        this.setPath("teaList.action");
+//        return "succeed";
+
+        //前台数据解析
+        String idLists[] = idList.split(",");
+
+        for (String id:idLists
+                ) {
+            int ida = Integer.parseInt(id);
+            Teacher demo = dao.findById(ida);
             dao.delete(demo);
         }
         this.setMessage("操作成功");
@@ -235,5 +248,13 @@ public class LoginAction extends ActionSupport {
 
     public void setSubjectInfo(int subjectInfo) {
         this.subjectInfo = subjectInfo;
+    }
+
+    public String getIdList() {
+        return idList;
+    }
+
+    public void setIdList(String idList) {
+        this.idList = idList;
     }
 }

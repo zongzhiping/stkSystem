@@ -50,7 +50,7 @@ public class KsAction extends ActionSupport {
 	private String pdfz;
 	private String bcfz;
 
-	private static boolean flag = false;
+	public boolean flag = false;
 
 	public String add() {
 		Ks demo = new Ks();
@@ -256,6 +256,7 @@ public class KsAction extends ActionSupport {
 		Ks ks1 = dao.findById(Integer.parseInt(selectFlag[0]));
 		int kstype = ks1.getType();
 		for (int i = 0; i < list.size(); i++) {
+
 			Tm tm = new Tm();
 			Kst bean = (Kst) list.get(i);
 			int tid = bean.getTid();
@@ -331,10 +332,11 @@ public class KsAction extends ActionSupport {
 			if(!flag){
 				// ±£´ætm
 				kstdao.saveTm(tm);
+
 			}
 
 		}
-		flag = true;
+		//flag = true;
 		List listdxt = kstdao.findAllTmType(stuid, selectFlag[0], 1);
 		List listddxt = kstdao.findAllTmType(stuid, selectFlag[0], 2);
 		List listpd = kstdao.findAllTmType(stuid, selectFlag[0], 3);
@@ -375,7 +377,6 @@ public class KsAction extends ActionSupport {
 				}
 			}
 			list = list2;
-			
 		}
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("list", list);

@@ -42,7 +42,7 @@ public class DxtAction extends ActionSupport {
 		demo.setSubjectInfo(subjectInfo);
 		dao.save(demo);
 		this.setMessage("Ìí¼Ó³É¹¦");
-		this.setPath("dxtList.action");
+		this.setPath("dxtList.action?subjectInfo="+subjectInfo);
 		return "succeed";
 	}
 

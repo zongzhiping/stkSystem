@@ -23,7 +23,7 @@
         <action name="adminLogin" class="loginAction" method="adminLogin">
              <!--<result name="yes">/WEB-INF/pages/home/fmain.jsp</result>-->
             <result name="yes">/loginSuccess.jsp</result>
-            <result name="no">/WEB-INF/pages/sysadmin/login/login.jsp</result>
+            <!--<result name="no">/WEB-INF/pages/sysadmin/login/login.jsp</result>-->
         </action>
         <!--&lt;!&ndash; 教师登入 &ndash;&gt;-->
          <!--<action name="teacherLogin" class="loginAction" method="teacherLogin">-->
